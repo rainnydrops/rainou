@@ -1,0 +1,77 @@
+#baseurl = 'https://rainnydrops.github.io/rainou/'
+baseurl = 'http://localhost:1313/rainou/'
+title = "Rain Notes"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+
+[pagination]
+pagerSize = 20
+
+[services]
+[services.disqus]
+shortname = "yourdiscussshortname"
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "Rain Ou"
+  info = "IT Specialist and Music Composer"
+  description = "This is a website summarize my journey along the way."
+  keywords = "notes,cybersecurity,music,share"
+  avatarurl = "images/avatar.png"
+  #gravatar = "email.com"
+
+  faviconSVG = "/img/favicon.svg"
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
+
+  since = 2025
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 3
+  url = "https://github.com/rainnydrops"
+[[params.social]]
+  name = "Linkedin"
+  icon = "fa-brands fa-linkedin fa-2x"
+  weight = 1
+  url = "https://www.linkedin.com/in/ryn-o-286ab4266/"
+[[params.social]]
+  name = "Soundcloud"
+  icon = "fa-brands fa-soundcloud fa-2x"
+  weight = 2
+  url = "https://soundcloud.com/user-946706629"
+
+# Menu links
+[[menu.main]]
+  name = "Cyber"
+  weight = 1
+  url = "cyber/"
+[[menu.main]]
+  name = "Music"
+  weight = 2
+  url  = "music/"
+[[menu.main]]
+  name = "About"
+  weight = 3
+  url = "about/"
