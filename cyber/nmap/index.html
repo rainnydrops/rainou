@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  NMAP · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Nmap
+  
+    
+    Link to heading
+  
+
+Enumeration tool to scan the available port and services
+
+  Command
+  
+    
+    Link to heading
+  
+
+nmap -h or man nmap man page
+
+  Scanning
+  
+    
+    Link to heading
+  
+
+
+Close port should obey to RFC 9293 when a closed port should send back a RST packet
+Switch starts with s
+-sT TCP Connect Scans, send a full three way hand shake
+-sS SYN &ldquo;Half-open&rdquo; Scans, only send syn to server
+-sU UDP scan (If the port is open, there should be no responses)">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NMAP">
+  <meta name="twitter:description" content="Nmap Link to heading Enumeration tool to scan the available port and services
+Command Link to heading nmap -h or man nmap man page
+Scanning Link to heading Close port should obey to RFC 9293 when a closed port should send back a RST packet
+Switch starts with s
+-sT TCP Connect Scans, send a full three way hand shake -sS SYN “Half-open” Scans, only send syn to server -sU UDP scan (If the port is open, there should be no responses)">
+
+<meta property="og:url" content="https://rainnydrops.github.io/rainou/cyber/nmap/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="NMAP">
+  <meta property="og:description" content="Nmap Link to heading Enumeration tool to scan the available port and services
+Command Link to heading nmap -h or man nmap man page
+Scanning Link to heading Close port should obey to RFC 9293 when a closed port should send back a RST packet
+Switch starts with s
+-sT TCP Connect Scans, send a full three way hand shake -sS SYN “Half-open” Scans, only send syn to server -sU UDP scan (If the port is open, there should be no responses)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+    <meta property="article:published_time" content="2024-02-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-03T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://rainnydrops.github.io/rainou/cyber/nmap/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.min.c8e4eea149ae1dc7c61ba9b0781793711a4e657f7e07a4413f9abc46d52dffc4.css" integrity="sha256-yOTuoUmuHcfGG6mweBeTcRpOZX9&#43;B6RBP5q8RtUt/8Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://rainnydrops.github.io/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://rainnydrops.github.io/rainou/cyber/nmap/">
+          NMAP
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="nmap">
+  Nmap
+  <a class="heading-link" href="#nmap">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Enumeration tool to scan the available port and services</p>
+<h1 id="command">
+  Command
+  <a class="heading-link" href="#command">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p><code>nmap -h</code> or <code>man nmap</code> man page</p>
+<h2 id="scanning">
+  Scanning
+  <a class="heading-link" href="#scanning">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="/uploads/threewayhandshake.png" alt="Three-Way Handshake">
+Close port should obey to <a href="https://datatracker.ietf.org/doc/html/rfc9293"  class="external-link" target="_blank" rel="noopener">RFC 9293</a> when a closed port should send back a RST packet</p>
+<p>Switch starts with <code>s</code><br>
+<code>-sT</code> TCP Connect Scans, send a full three way hand shake
+<code>-sS</code> SYN &ldquo;Half-open&rdquo; Scans, only send syn to server
+<code>-sU</code> UDP scan (If the port is open, there should be no responses)</p>
+<p><code>-o</code> OS scan<br>
+<code>-sv</code> detect service version<br>
+<code>-A</code> shorthand switch that activates service detection, operating system detection, a traceroute and common script scanning</p>
+<h3 id="less-common-scan">
+  Less common scan
+  <a class="heading-link" href="#less-common-scan">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This are generally used for firewall evasion, avoid firewall detection
+<code>-sN</code> TCP Null Scans<br>
+<code>-sF</code> TCP FIN Scans<br>
+<code>-sX</code> TCP Xmas Scans</p>
+<ul>
+<li>If the port is open, there should be no responses</li>
+</ul>
+<h2 id="scan-port">
+  Scan Port
+  <a class="heading-link" href="#scan-port">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>-p [port number (range)]</code> scan specified port<br>
+<code>-p-</code> scan all port</p>
+<h3 id="bypass-firewall">
+  Bypass firewall
+  <a class="heading-link" href="#bypass-firewall">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><code>-Pn</code> bypass the ICMP block, always treat target alive
+it is preferable to use ARP requests if on the local network
+<a href="https://nmap.org/book/man-bypass-firewalls-ids.html"  class="external-link" target="_blank" rel="noopener">More filewall evasion techniques</a></p>
+<h4 id="packet-sending-techniques">
+  Packet sending techniques
+  <a class="heading-link" href="#packet-sending-techniques">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><code>-f</code> use fragment packet
+<code>--mtu &lt;number&gt;</code> provide more control over the size of the packet (must be a multiple of 8)
+<code>--scan-delay &lt;time&gt;ms</code> delay between packets sent
+<code>--badsum</code>:- this is used to generate in invalid checksum for packets. Any real TCP/IP stack would drop this packet, however, firewalls may potentially respond automatically, without bothering to check the checksum of the packet. As such, this switch can be used to determine the presence of a firewall/IDS.</p>
+<h2 id="scan-network">
+  Scan network
+  <a class="heading-link" href="#scan-network">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>use ICMP to detect if the machine is online
+<code>-sn</code><br>
+<code>nmap -sn 192.168.0.1-254</code>
+<code>nmap -sn 192.168.0.0/24</code></p>
+<h2 id="verbose">
+  Verbose
+  <a class="heading-link" href="#verbose">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>-v</code> first level verbosity<br>
+<code>-vv</code> second level verbosity</p>
+<h2 id="output">
+  Output
+  <a class="heading-link" href="#output">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Switch starts with <code>o</code><br>
+<code>-oA</code> save the nmap results in three major formats<br>
+<code>-oN</code> normal format<br>
+<code>-oG</code> grepable format</p>
+<h2 id="peripheral">
+  Peripheral
+  <a class="heading-link" href="#peripheral">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>-T5</code> timing template to level 5<br>
+<code>--script=[script category]</code></p>
+<h1 id="nmap-scripting-engine-nse">
+  Nmap Scripting Engine (NSE)
+  <a class="heading-link" href="#nmap-scripting-engine-nse">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>Addition to Nmap</li>
+<li>Extending its functionality</li>
+<li>Written in the Lua programming language</li>
+<li>Script library and its category
+<code>safe</code>: Won&rsquo;t affect the target
+<code>intrusive</code>: Not safe: likely to affect the target
+<code>vuln</code>: Scan for vulnerabilities
+<code>exploit</code>: Attempt to exploit a vulnerability
+<code>auth</code>: Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+<code>brute</code>: Attempt to bruteforce credentials for running services
+<code>discovery</code>: Attempt to query running services for further information about the network (e.g. query an SNMP server).
+<a href="https://nmap.org/book/nse-usage.html"  class="external-link" target="_blank" rel="noopener">More able NSE</a></li>
+</ul>
+<h3 id="nse-usage">
+  NSE usage
+  <a class="heading-link" href="#nse-usage">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>NSE is activated with <code>--script=[category]</code>
+e.g. <code>--script=vuln</code> <code>--script=http-fileupload-exploiter</code> <code>--script=smb-enum-users,smb-enum-shares</code>
+e.g. <code>nmap -p 80 --script http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'</code></li>
+<li><strong>Help command</strong> <code>nmap --script-help &lt;script-name&gt;</code>
+<ul>
+<li>Note that to know what the argument is, click in to the link that shows more information</li>
+</ul>
+</li>
+<li>Note that the arguments are separated by commas, and connected to the corresponding script with periods.</li>
+</ul>
+<h3 id="searching-for-script">
+  Searching for script:
+  <a class="heading-link" href="#searching-for-script">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Read Doc: <a href="https://nmap.org/nsedoc/"  class="external-link" target="_blank" rel="noopener">Nmap website Doc page</a></li>
+<li>Script are stored under <code>/usr/share/nmap/scripts</code></li>
+<li>Search using <code>/usr/share/nmap/scripts/script.db</code> which has formatted text file containing filenames and categories for each available script
+<ul>
+<li>grep search: <code>grep &quot;ftp&quot; /usr/share/nmap/scripts/script.db</code></li>
+<li>category search: <code>grep &quot;safe&quot; /usr/share/nmap/scripts/script.db</code></li>
+<li>directory expression search: <code>ls -l /usr/share/nmap/scripts/*ftp*</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="installing-new-script">
+  Installing new script
+  <a class="heading-link" href="#installing-new-script">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>If missing script: update nmap will fix it
+<ul>
+<li><code>sudo apt update &amp;&amp; sudo apt install nmap</code></li>
+</ul>
+</li>
+<li>Download script from nmap <code>sudo wget -O /usr/share/nmap/scripts/&lt;script-name&gt;.nse https://svn.nmap.org/nmap/scripts/&lt;script-name&gt;.nse</code></li>
+<li>Update <code>script.db</code> using <code>nmap --script-updatedb</code></li>
+<li>same update process if writing my own script</li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

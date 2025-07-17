@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Rain Notes</title>
-    <link>http://localhost:1313/rainou/about/</link>
+    <link>https://rainnydrops.github.io/rainou/about/</link>
     <description>Recent content in Abouts on Rain Notes</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/rainou/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rainnydrops.github.io/rainou/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>http://localhost:1313/rainou/about/about/</link>
+      <title>About Me</title>
+      <link>https://rainnydrops.github.io/rainou/about/about-me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/rainou/about/about/</guid>
-      <description>&lt;p&gt;test&lt;/p&gt;</description>
+      <guid>https://rainnydrops.github.io/rainou/about/about-me/</guid>
+      <description>&lt;h1 id=&#34;about-this-website&#34;&gt;&#xA;  About this website&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#about-this-website&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;This is a place where I share my footprints, my notes, my projects, and maybe even some of my thoughts as I go along my journey. The website link is only shared with those who may need my knowledge or want to know a little more about me.&lt;/p&gt;&#xA;&lt;p&gt;I hope that some digital trace of me will be left behind for my future self to look back on. At the same time, I also hope my friends and coworkers can reference this website when they need my knowledge in a pinch. These are all the notes that I&amp;rsquo;ve taken down on my digital notebook, I&amp;rsquo;ll only share the notes that may benefit others. Some notes may be tailored specifically to me, so read them with a grain of salt.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
