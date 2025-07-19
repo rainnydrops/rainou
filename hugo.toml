@@ -5,13 +5,12 @@ theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-
 [pagination]
 pagerSize = 20
 
-[services]
-[services.disqus]
-shortname = "yourdiscussshortname"
+#[services]
+#[services.disqus]
+#shortname = "yourdiscussshortname"
 
 [markup.highlight]
 style = "github-dark"

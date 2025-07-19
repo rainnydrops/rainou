@@ -6,13 +6,14 @@
     <description>Recent content in Musics on Rain Notes</description>
     <generator>Hugo</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 21 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/rainou/music/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>http://localhost:1313/rainou/music/music/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/rainou/music/music/</guid>
-      <description>&lt;p&gt;test&lt;/p&gt;</description>
+      <title>_Music Reference</title>
+      <link>http://localhost:1313/rainou/music/_music-reference/</link>
+      <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/rainou/music/_music-reference/</guid>
+      <description>&lt;h1 id=&#34;reference-sheet&#34;&gt;&#xA;  Reference Sheet&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#reference-sheet&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://milnepublishing.geneseo.edu/fundamentals-function-form/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Free Textbook on the fundamental&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;https://ebookcentral-proquest-com.proxy.queensu.ca/lib/queen-ebooks/detail.action?docID=271183&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Formal function to the western classical Form&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;music-symbol-short-cut&#34;&gt;&#xA;  Music symbol short cut&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#music-symbol-short-cut&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Often Used Symbol&#xA;1̂ 2̂ 3̂ 4̂ 5̂ 6̂ 7̂ 8̂&lt;/p&gt;&#xA;&lt;p&gt;In preview text&#xA;Exponent: &lt;code&gt;shift + ctrl + cmd + ‘+’&lt;/code&gt;&#xA;Superscript:  &lt;code&gt;shift + cmd + ‘’+ [chozen key]&lt;/code&gt;&#xA;°: &lt;code&gt;shift + option + 8&lt;/code&gt;&#xA;Ø: &lt;code&gt;shift + option + o&lt;/code&gt;&#xA;♭&#xA;Control-Command-Space for more emo(symbol) character&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

