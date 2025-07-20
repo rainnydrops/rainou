@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  Cryptography Introduction · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Cryptography
+  
+    
+    Link to heading
+  
+
+
+  Hash
+  
+    
+    Link to heading
+  
+
+Hash: An one way encryption, usually used for integrity purpose
+
+  Hash cracker
+  
+    
+    Link to heading
+  
+
+Available hash cracker
+
+Online hash cracker
+Online hash cracker (Recommend)
+
+
+  Recognize different Hash
+  
+    
+    Link to heading
+  
+
+
+Hash recognition tool do exist, but they are unreliable for many format
+Use this website to distinguish different hash characteristic for example hashes, good for hash that have a prefix
+Hashes usually have some sort of prefix:
+{width=75%}
+Tools like Hashcat and John the Ripper turns the string into hash and do the compareson
+
+
+  Hash type Identifier
+  
+    
+    Link to heading
+  
+
+
+Online tool - Hashes (recommended)
+Online tool 2 - md5
+Online tool 3 - tunnelsup
+python tool Hash_identifier (recommended)
+
+wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py
+run with python3 hash-id.py
+
+
+
+
+  Hashcat Command
+  
+    
+    Link to heading
+  
+
+
+--force for hashcat can lead to false positive and false negative
+Use hashcat --help to find more
+Usecase #1: Password hash cracking
+Example command line:
+hashcat -m 3200 -a 0 -o ~/Downloads/cracked.txt ~/Downloads/hash.txt ~/Downloads/rockyou.txt
+
+-m 3200: type of hash
+-a 0: dictionary crack
+-o ~/Downloads/cracked.txt: cracked hash save to
+~/Downloads/hash.txt: hashes to crack
+~/Downloads/rockyou.txt: dictionary used
+
+
+Usecase #2: Integrity Checking
+HMACs (Hash-based Message Authentication)
+
+A way to check if the hash has been altered
+
+
+
+
+  John the ripper
+  
+    
+    Link to heading
+  
+
+
+A password cracking tool
+Installation and Official install, read INSTALL for installation on MACOS
+
+
+git clone https://github.com/magnumripper/JohnTheRipper jumbo
+cd jumbo/src
+./configure
+make clean &amp;&amp; make -s
+- alternate configure: ./configure CPPFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; --disable-pkg-config">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cryptography Introduction">
+  <meta name="twitter:description" content="Cryptography Link to heading Hash Link to heading Hash: An one way encryption, usually used for integrity purpose
+Hash cracker Link to heading Available hash cracker
+Online hash cracker Online hash cracker (Recommend) Recognize different Hash Link to heading Hash recognition tool do exist, but they are unreliable for many format Use this website to distinguish different hash characteristic for example hashes, good for hash that have a prefix Hashes usually have some sort of prefix: {width=75%} Tools like Hashcat and John the Ripper turns the string into hash and do the compareson Hash type Identifier Link to heading Online tool - Hashes (recommended) Online tool 2 - md5 Online tool 3 - tunnelsup python tool Hash_identifier (recommended) wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py run with python3 hash-id.py Hashcat Command Link to heading --force for hashcat can lead to false positive and false negative Use hashcat --help to find more Usecase #1: Password hash cracking Example command line: hashcat -m 3200 -a 0 -o ~/Downloads/cracked.txt ~/Downloads/hash.txt ~/Downloads/rockyou.txt -m 3200: type of hash -a 0: dictionary crack -o ~/Downloads/cracked.txt: cracked hash save to ~/Downloads/hash.txt: hashes to crack ~/Downloads/rockyou.txt: dictionary used Usecase #2: Integrity Checking HMACs (Hash-based Message Authentication) A way to check if the hash has been altered John the ripper Link to heading A password cracking tool Installation and Official install, read INSTALL for installation on MACOS git clone https://github.com/magnumripper/JohnTheRipper jumbo cd jumbo/src ./configure make clean &amp;&amp; make -s - alternate configure: ./configure CPPFLAGS=&#34;-I$(brew --prefix openssl)/include&#34; LDFLAGS=&#34;-L$(brew --prefix openssl)/lib&#34; --disable-pkg-config">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/crpytography/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="Cryptography Introduction">
+  <meta property="og:description" content="Cryptography Link to heading Hash Link to heading Hash: An one way encryption, usually used for integrity purpose
+Hash cracker Link to heading Available hash cracker
+Online hash cracker Online hash cracker (Recommend) Recognize different Hash Link to heading Hash recognition tool do exist, but they are unreliable for many format Use this website to distinguish different hash characteristic for example hashes, good for hash that have a prefix Hashes usually have some sort of prefix: {width=75%} Tools like Hashcat and John the Ripper turns the string into hash and do the compareson Hash type Identifier Link to heading Online tool - Hashes (recommended) Online tool 2 - md5 Online tool 3 - tunnelsup python tool Hash_identifier (recommended) wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py run with python3 hash-id.py Hashcat Command Link to heading --force for hashcat can lead to false positive and false negative Use hashcat --help to find more Usecase #1: Password hash cracking Example command line: hashcat -m 3200 -a 0 -o ~/Downloads/cracked.txt ~/Downloads/hash.txt ~/Downloads/rockyou.txt -m 3200: type of hash -a 0: dictionary crack -o ~/Downloads/cracked.txt: cracked hash save to ~/Downloads/hash.txt: hashes to crack ~/Downloads/rockyou.txt: dictionary used Usecase #2: Integrity Checking HMACs (Hash-based Message Authentication) A way to check if the hash has been altered John the ripper Link to heading A password cracking tool Installation and Official install, read INSTALL for installation on MACOS git clone https://github.com/magnumripper/JohnTheRipper jumbo cd jumbo/src ./configure make clean &amp;&amp; make -s - alternate configure: ./configure CPPFLAGS=&#34;-I$(brew --prefix openssl)/include&#34; LDFLAGS=&#34;-L$(brew --prefix openssl)/lib&#34; --disable-pkg-config">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+    <meta property="article:published_time" content="2025-01-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/crpytography/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/crpytography/">
+          Cryptography Introduction
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="cryptography">
+  Cryptography
+  <a class="heading-link" href="#cryptography">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="hash">
+  Hash
+  <a class="heading-link" href="#hash">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Hash: An one way encryption, usually used for integrity purpose</p>
+<h2 id="hash-cracker">
+  Hash cracker
+  <a class="heading-link" href="#hash-cracker">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Available hash cracker</p>
+<ul>
+<li><a href="https://crackstation.net/"  class="external-link" target="_blank" rel="noopener">Online hash cracker</a></li>
+<li><a href="https://hashes.com/en/decrypt/hash"  class="external-link" target="_blank" rel="noopener">Online hash cracker (Recommend)</a></li>
+</ul>
+<h2 id="recognize-different-hash">
+  Recognize different Hash
+  <a class="heading-link" href="#recognize-different-hash">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Hash recognition <a href="https://pypi.org/project/hashID/"  class="external-link" target="_blank" rel="noopener">tool</a> do exist, but they are unreliable for many format</li>
+<li>Use <a href="https://hashcat.net/wiki/doku.php?id=example_hashes"  class="external-link" target="_blank" rel="noopener">this website</a> to distinguish different hash characteristic for example hashes, good for hash that have a prefix</li>
+<li>Hashes usually have some sort of prefix:
+<img src="../../_resources/Screenshot%202024-01-13%20at%2010.13.12%E2%80%AFPM.png" alt="Prefixes">{width=75%}</li>
+<li>Tools like Hashcat and John the Ripper turns the string into hash and do the compareson</li>
+</ul>
+<h3 id="hash-type-identifier">
+  Hash type Identifier
+  <a class="heading-link" href="#hash-type-identifier">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><a href="https://hashes.com/en/tools/hash_identifier"  class="external-link" target="_blank" rel="noopener">Online tool - Hashes (recommended)</a></li>
+<li><a href="https://md5hashing.net/hash/"  class="external-link" target="_blank" rel="noopener">Online tool 2 - md5</a></li>
+<li><a href="https://www.tunnelsup.com/hash-analyzer/"  class="external-link" target="_blank" rel="noopener">Online tool 3 - tunnelsup</a></li>
+<li><a href="https://gitlab.com/kalilinux/packages/hash-identifier/-/tree/kali/master"  class="external-link" target="_blank" rel="noopener">python tool Hash_identifier (recommended)</a>
+<ul>
+<li><code>wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py</code></li>
+<li>run with <code>python3 hash-id.py</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="hashcat-command">
+  Hashcat Command
+  <a class="heading-link" href="#hashcat-command">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><code>--force</code> for hashcat can lead to false positive and false negative</li>
+<li>Use <code>hashcat --help</code> to find more</li>
+<li>Usecase #1: <strong>Password hash cracking</strong></li>
+<li>Example command line:</li>
+<li><code>hashcat -m 3200 -a 0 -o ~/Downloads/cracked.txt ~/Downloads/hash.txt ~/Downloads/rockyou.txt</code>
+<ul>
+<li><code>-m 3200</code>: type of hash</li>
+<li><code>-a 0</code>: dictionary crack</li>
+<li><code>-o ~/Downloads/cracked.txt</code>: cracked hash save to</li>
+<li><code>~/Downloads/hash.txt</code>: hashes to crack</li>
+<li><code>~/Downloads/rockyou.txt</code>: dictionary used</li>
+</ul>
+</li>
+<li>Usecase #2: Integrity Checking</li>
+<li>HMACs (Hash-based Message Authentication)
+<ul>
+<li>A way to check if the hash has been altered</li>
+</ul>
+</li>
+</ul>
+<h2 id="john-the-ripper">
+  John the ripper
+  <a class="heading-link" href="#john-the-ripper">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>A password cracking tool</li>
+<li><a href="https://gist.github.com/fijiwebdesign/0a56ec28f1f23412fc16cca70f48d8e0"  class="external-link" target="_blank" rel="noopener">Installation</a> and <a href="https://www.openwall.com/john/doc/INSTALL.shtml"  class="external-link" target="_blank" rel="noopener">Official install</a>, read INSTALL for installation on MACOS</li>
+</ul>
+<blockquote>
+<p>git clone <a href="https://github.com/magnumripper/JohnTheRipper"  class="external-link" target="_blank" rel="noopener">https://github.com/magnumripper/JohnTheRipper</a> jumbo
+cd jumbo/src
+./configure
+make clean &amp;&amp; make -s
+- alternate configure: <code>./configure CPPFLAGS=&quot;-I$(brew --prefix openssl)/include&quot; LDFLAGS=&quot;-L$(brew --prefix openssl)/lib&quot; --disable-pkg-config</code></p>
+</blockquote>
+<ul>
+<li><code>john [options] [path to file]</code></li>
+<li>cracked password is located in <code>~/.john/john.pot</code></li>
+<li>Automatic cracking:
+<ul>
+<li><code>john --wordlist=[path to wordlist] [path to file]</code></li>
+<li>e.g. <code>john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt</code></li>
+</ul>
+</li>
+<li>Crack with format (need to ass <code>-raw</code> for standard hashing)
+<ul>
+<li><code>john --format=[format] --wordlist=[path to wordlist] [path to file]</code></li>
+<li><code>john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt</code></li>
+</ul>
+</li>
+<li>To check john&rsquo;s available supporing encryption format
+<ul>
+<li><code>john --list=formats</code></li>
+<li><code>john --list=formats | grep -iF &quot;md5&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="other-password-tools">
+  Other password tools
+  <a class="heading-link" href="#other-password-tools">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="hydra">
+  Hydra
+  <a class="heading-link" href="#hydra">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><a href="https://github.com/vanhauser-thc/thc-hydra"  class="external-link" target="_blank" rel="noopener">Hydra</a>: online password cracking tool which can perform rapid dictionary attacks. Adaptive password attacks against of many different services</li>
+<li>example command: <code>hydra -t 4 -l dale -P /usr/share/wordlists/rockyou.txt -vV 10.10.10.6 ftp</code>
+<ul>
+<li><code>hydra</code>: Runs the hydra tool</li>
+<li><code>-t 4</code>: Number of parallel connections per target</li>
+<li><code>-l [user]</code>: Points to the user who&rsquo;s account you&rsquo;re trying to compromise</li>
+<li><code>-P [path to dictionary]</code> Points to the file containing the list of possible passwords</li>
+<li><code>-vV</code> Sets verbose mode to very verbose, shows the login+pass combination for each attempt</li>
+<li><code>[machine IP]</code> The IP address of the target machine</li>
+<li><code>[protoco]</code>: Sets the protocol</li>
+</ul>
+</li>
+</ul>
+<h2 id="nthash--ntlm">
+  NTHash / NTLM
+  <a class="heading-link" href="#nthash--ntlm">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This is the hash format where Windows system stores user password in hash form
+*Previous Window hashing format is known as LM, hence NT/LM
+*NT reffered to new technology</p>
+<ul>
+<li>By using <em>Mimikatz</em> or from the <em>Active Directory database</em>, we can dump NTHash/NTLM hashes stored in SAM database: <strong>NTDS.dit</strong></li>
+<li>Possible attack method:
+<ul>
+<li>conduct a &ldquo;pass the hash&rdquo; attack</li>
+<li>we can conduct hash cracking if weak password policy existed</li>
+</ul>
+</li>
+</ul>
+<h2 id="linux-password-file">
+  Linux password file
+  <a class="heading-link" href="#linux-password-file">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><code>/etc/shadow</code>: stors hashes, includes last password change and password expiration information</li>
+<li><code>/etc/passwd</code>: is usually required for the shadow file to be cracked</li>
+<li>unshadow is the tool built-in in JTR: <code>unshadow [path to passwd] [path to shadow]</code>
+<ul>
+<li>e.g. <code>unshadow local_passwd local_shadow &gt; unshadowed.txt</code></li>
+</ul>
+</li>
+<li>unshadow accept both file or inline usage:
+<ul>
+<li>e.g.  <code>/etc/passwd</code> line for the root user: <code>root:x:0:0::/root:/bin/bash</code></li>
+<li>e.g. <code>/etc/shadow</code> line for the root user: <code>root:$6$2nwjN454g.dv4HN/$m9Z/r2xVfweYVkrr.v5Ft8Ws3/YYksfNwq96UL1FX0OJjY1L6l.DS3KEVsZ9rOVLB/ldTeEL/OIhJZ4GMFMGA0:18576::::::</code>
+*Field separated by <code>:</code> are called Gecos</li>
+</ul>
+</li>
+<li>Then we can crack the <code>unshadowed.txt</code> produced by unshadow command
+<ul>
+<li>e.g. <code>john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt</code>
+*Usually the format doesn&rsquo;t need to be specified</li>
+</ul>
+</li>
+</ul>
+<h3 id="crack-mode-single-crack">
+  Crack mode: Single Crack
+  <a class="heading-link" href="#crack-mode-single-crack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Word Mangling: Generate different version of password based-of off username</li>
+<li>e.g. username Markus, the possible variation include:
+<ul>
+<li>Markus1, Markus2, Markus3 (etc.)</li>
+<li>MArkus, MARkus, MARKus (etc.)</li>
+<li>Markus!, Markus$, Markus* (etc.)</li>
+</ul>
+</li>
+<li>Example Code: <code>john --single --format=[format] [path to file]</code>
+<ul>
+<li>e.g. <code>john --single --format=raw-sha256 hashes.txt</code></li>
+</ul>
+</li>
+<li>File Formats in Single Crack Mode: <code>mike:1efee03cdcb96d90ad48ccc7b8666033</code></li>
+<li>Word Magling rules can be customized
+<ul>
+<li>path to the john.conf: <code>/opt/homebrew/Cellar/john-jumbo/1.9.0_1/share/john/john.conf</code></li>
+<li><a href="https://www.openwall.com/john/doc/RULES.shtml"  class="external-link" target="_blank" rel="noopener">Wordlist Rule Syntax</a>
+e.g. The custom rule can be called using the following command: <code>john --wordlist=[path to wordlist] --rule=PoloPassword [path to file] </code>, If the rules looks like this:
+<blockquote>
+<p>[List.Rules:PoloPassword]
+cAz&quot;[0-9] [!£$%@]&quot;</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="crack-the-password-of-a-compressed-file">
+  Crack the password of a Compressed file
+  <a class="heading-link" href="#crack-the-password-of-a-compressed-file">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="crack-zip-file">
+  Crack Zip file
+  <a class="heading-link" href="#crack-zip-file">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Turn the zip file into john&rsquo;s hash</li>
+<li><code>zip2john [options] [zip file] &gt; [output file]</code></li>
+<li>e.g. <code>zip2john zipfile.zip &gt; zip_hash.txt</code></li>
+</ul>
+<h3 id="crack-rar-file">
+  Crack rar file
+  <a class="heading-link" href="#crack-rar-file">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>rar file into hash</li>
+<li><code>rar2john [rar file] &gt; [output file]</code></li>
+<li>e.g. <code>rar2john rarfile.rar &gt; rar_hash.txt</code></li>
+</ul>
+<h2 id="crack-ssh-keys-password">
+  Crack SSH Keys Password
+  <a class="heading-link" href="#crack-ssh-keys-password">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><code>ssh2john [id_rsa private key file] &gt; [output file]</code></li>
+<li>python version is available <code>python3 /opt/ssh2john.py</code> or <code>python /usr/share/john/ssh2john.py</code></li>
+<li>Then <code>john --wordlist=used/rockyou.txt encry.txt</code></li>
+<li>Note that ssh2john is located in:   <code>/Users/ryn/Documents/Tools/jumbo/run/ssh2john</code></li>
+</ul>
+<h1 id="encryption">
+  Encryption
+  <a class="heading-link" href="#encryption">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>Encryption storage standards: <a href="https://listings.pcisecuritystandards.org/documents/PCI_DSS_for_Large_Organizations_v1.pdf"  class="external-link" target="_blank" rel="noopener">PCI-DSS</a></li>
+<li>Symmetric encryption: same key to encrypt and decrypt
+<ul>
+<li>DES, 56 bits long, later became Triple DES (3DES)</li>
+<li>AES, 128 or 256 bit long</li>
+</ul>
+</li>
+<li>Asymmetric encryption: one for encrypt, other for decrypt
+<ul>
+<li>RSA typically uses 2048 to 4096 bit</li>
+<li>Elliptic Curve cryptography</li>
+</ul>
+</li>
+</ul>
+<h2 id="rsa">
+  RSA
+  <a class="heading-link" href="#rsa">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Use the same mathematical theoretical problem that &ldquo;its hard to find the two prime number multiplied to get the number 14351&rdquo; (i.e. it&rsquo;s hard to calculate and know that these two numbers: 113 and 127 is the answer of 14351). RSA uses this properly to encrypt data, 113 can be the public key, and 127 can be the private key.</p>
+<ul>
+<li>Some of the RSA crack tool:
+<ul>
+<li><a href="https://github.com/RsaCtfTool/RsaCtfTool"  class="external-link" target="_blank" rel="noopener">RsaCtfTool</a></li>
+<li><a href="https://github.com/ius/rsatool"  class="external-link" target="_blank" rel="noopener">rsatool</a></li>
+</ul>
+</li>
+<li>The key variables RSA in CTFs are p, q, m, n, e, d, and c.
+<ul>
+<li>“p” and “q” are large prime numbers</li>
+<li>“n” is the product of p and q.</li>
+<li>The public key is n and e.</li>
+<li>The private key is n and d.</li>
+<li>“m” is used to represent the message (in plaintext)</li>
+<li>“c” represents the ciphertext (encrypted text).</li>
+</ul>
+</li>
+<li><a href="https://muirlandoracle.co.uk/2020/01/29/rsa-encryption/"  class="external-link" target="_blank" rel="noopener">More about RSA encryption</a></li>
+</ul>
+<h1 id="note">
+  Note
+  <a class="heading-link" href="#note">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>HTTPS certificate is a symmetric encryption, where the shared key is send asymetricly at the beginning of the session. <a href="https://robertheaton.com/2014/03/27/how-does-https-actually-work/"  class="external-link" target="_blank" rel="noopener">How HTTP works</a></li>
+<li><strong>Key Exchange</strong>: A way for two party to exchange the key without observer being able to get the keys: common symmetric keys without actual sending over
+<ul>
+<li><strong><a href="https://www.youtube.com/watch?v=NmM9HA2MQGI"  class="external-link" target="_blank" rel="noopener">Diffie Hellman Key Exchange</a></strong>:
+<ul>
+<li>create the public keys with the private key</li>
+<li>public variable both party agreed: g (generator) and n (a prime number usually for mathematic calculation reason 1000-4000 bits long), a (Alice) and b (Bob). All of these are under the assumption that the <strong>mathematic formula works when the order of calculating a or b does not matter</strong>.
+<ol>
+<li>Alice: private key + g = ag</li>
+<li>Bob: private key + g = bg</li>
+<li>Exchange the ag and bg</li>
+<li>Alice private + bg = abg</li>
+<li>Bob private + ag = abg</li>
+<li>Both Alice and Bob has the same key: abg, they can then encrypt and decrypt message via key abg.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>PGP</strong>: Pretty Good Privacy, software that implements encryptions for encrypting files, digital signing and more</li>
+<li><strong><a href="https://gnupg.org/"  class="external-link" target="_blank" rel="noopener">GPG</a></strong>:
+<ul>
+<li>Mainly used to decrypt files in CTFs</li>
+<li>Private keys can be protected with passphrases with GPG
+<ul>
+<li>if key are protected by passphrases, they can be cracked by JTR and gpg2john</li>
+</ul>
+</li>
+<li><a href="https://www.gnupg.org/gph/de/manual/r1023.html"  class="external-link" target="_blank" rel="noopener">GPG man page</a></li>
+</ul>
+</li>
+<li><strong>DES</strong>:
+<ul>
+<li>Data Encryption Standard</li>
+<li>Symmetric-key encryption, same key of encryption and decryption</li>
+<li>It&rsquo;s obsolete betcause it is 56-bit, 56-bit key became very easy to crack using brute force.</li>
+</ul>
+</li>
+<li><strong>AES</strong>: Most popular today
+<ul>
+<li>Advanced Encryption Standard, replacement for DES</li>
+<li>Sometime are called Rijndael after its creator</li>
+<li>Operate on blocks of data</li>
+<li><a href="https://www.youtube.com/watch?v=O4xNJsjtN6E"  class="external-link" target="_blank" rel="noopener">How AES works</a></li>
+</ul>
+</li>
+<li>Quantom Computer and Encryption
+<ul>
+<li>To prevent to the havoc of Quantom Computer and Encryption:</li>
+<li>use RSA-3072 or better for asymmetric encryption</li>
+<li>use AES-256 or better for symmetric encryption</li>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/ir/2016/NIST.IR.8105.pdf"  class="external-link" target="_blank" rel="noopener">More about it</a></li>
+<li>More to read: &ldquo;Cryptography Apocalypse&rdquo; By Roger A. Grimes</li>
+</ul>
+</li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

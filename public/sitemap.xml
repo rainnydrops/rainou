@@ -5,7 +5,7 @@
     <loc>http://localhost:1313/rainou/</loc>
     <lastmod>2025-07-19T17:45:43-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/rainou/music/_music-reference/</loc>
+    <loc>http://localhost:1313/rainou/music/reference/</loc>
     <lastmod>2025-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/rainou/music/</loc>
@@ -17,13 +17,11 @@
     <loc>http://localhost:1313/rainou/cyber/metasploit/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/rainou/cyber/cryptography--encryption/</loc>
+    <loc>http://localhost:1313/rainou/cyber/crpytography/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/rainou/cyber/nmap/</loc>
     <lastmod>2024-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/rainou/about/about-me/</loc>
   </url><url>
     <loc>http://localhost:1313/rainou/about/</loc>
   </url><url>

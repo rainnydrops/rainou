@@ -1,5 +1,5 @@
 ---
-title: _Music Reference
+title: Music Reference
 date: 2025-05-21
 updated: 2025-05-21 17:48:10Z
 created: 2023-05-20 08:08:48Z
@@ -25,7 +25,7 @@ Control-Command-Space for more emo(symbol) character
 
 ## Circle of Fifth
 
-![3f33d3f7a1714b8985b73b1641d93766.png](/_resources/3f33d3f7a1714b8985b73b1641d93766.png)
+![3f33d3f7a1714b8985b73b1641d93766.png](../../_resources/3f33d3f7a1714b8985b73b1641d93766.png)
 
 # Key Major-Minor
 
