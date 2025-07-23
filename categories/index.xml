@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Rain Notes</title>
-    <link>https://rainnydrops.github.io/rainou/categories/</link>
+    <link>http://localhost:1313/rainou/categories/</link>
     <description>Recent content in Categories on Rain Notes</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://rainnydrops.github.io/rainou/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/rainou/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
