@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  System - Windows · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Window Note
+  
+    
+    Link to heading
+  
+
+
+  File System Overall
+  
+    
+    Link to heading
+  
+
+
+FAT16/FAT32 (File Allocation Table) - Mostly external use
+HPFS (High Performance File System) - Not much in use
+NTFS New Technology File System
+
+Kown as journaling file system: repair folder/files using a log file
+Benefits:
+
+Supports files larger than 4GB
+Set specific permissions on folders and files
+Folder and file compression
+Encryption (Encryption File System or EFS)
+Alternate Data Streams (ADS)
+
+Every file contain one data stream ($DATA), ADS allows file to contains more than a data stream: can use ADS to hide data
+More on ADS here
+
+
+
+
+
+
+More on FAT, HPFS, and NTFS File Systems
+System enviroment variable directory path: Stores information about operating system enviroment More on this here
+
+%Windir%
+
+Most important folder in the Windows directory is System32 directory: contains all the Windows system operational files for the Windows OS to function properly
+
+
+  System Panel
+  
+    
+    Link to heading
+  
+
+
+Local User and Group Management: lusrmgr.msc
+System Configuration for advanced troubleshooting for troubleshooting configuration error.: msconfig
+More on System configuration here
+Task manager: Ctrl&#43;Shift&#43;Esc
+Control Panel: Control.exe
+Computer Management: compmgmt compmgmt.msc:
+
+System Tools
+Storage
+Services and Applications.
+
+WMI is a windows management instrumentation sevice
+
+Depricated in Win10 and taken over by Powershell
+
+
+
+
+
+
+System Information: msinfo32 msinfo32.exe
+
+Hardware Resources: Click Here to know more
+Components
+Software Environment
+
+
+Resource Monitor: resmon.exe
+Register: regedit regedt32.exe More about registery here
+
+
+  Security
+  
+    
+    Link to heading
+  
+
+More on Microsoft Security Update Guide">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="System - Windows">
+  <meta name="twitter:description" content="Window Note Link to heading File System Overall Link to heading FAT16/FAT32 (File Allocation Table) - Mostly external use HPFS (High Performance File System) - Not much in use NTFS New Technology File System Kown as journaling file system: repair folder/files using a log file Benefits: Supports files larger than 4GB Set specific permissions on folders and files Folder and file compression Encryption (Encryption File System or EFS) Alternate Data Streams (ADS) Every file contain one data stream ($DATA), ADS allows file to contains more than a data stream: can use ADS to hide data More on ADS here More on FAT, HPFS, and NTFS File Systems System enviroment variable directory path: Stores information about operating system enviroment More on this here %Windir% Most important folder in the Windows directory is System32 directory: contains all the Windows system operational files for the Windows OS to function properly System Panel Link to heading Local User and Group Management: lusrmgr.msc System Configuration for advanced troubleshooting for troubleshooting configuration error.: msconfig More on System configuration here Task manager: Ctrl&#43;Shift&#43;Esc Control Panel: Control.exe Computer Management: compmgmt compmgmt.msc: System Tools Storage Services and Applications. WMI is a windows management instrumentation sevice Depricated in Win10 and taken over by Powershell System Information: msinfo32 msinfo32.exe Hardware Resources: Click Here to know more Components Software Environment Resource Monitor: resmon.exe Register: regedit regedt32.exe More about registery here Security Link to heading More on Microsoft Security Update Guide">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/system---windows/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="System - Windows">
+  <meta property="og:description" content="Window Note Link to heading File System Overall Link to heading FAT16/FAT32 (File Allocation Table) - Mostly external use HPFS (High Performance File System) - Not much in use NTFS New Technology File System Kown as journaling file system: repair folder/files using a log file Benefits: Supports files larger than 4GB Set specific permissions on folders and files Folder and file compression Encryption (Encryption File System or EFS) Alternate Data Streams (ADS) Every file contain one data stream ($DATA), ADS allows file to contains more than a data stream: can use ADS to hide data More on ADS here More on FAT, HPFS, and NTFS File Systems System enviroment variable directory path: Stores information about operating system enviroment More on this here %Windir% Most important folder in the Windows directory is System32 directory: contains all the Windows system operational files for the Windows OS to function properly System Panel Link to heading Local User and Group Management: lusrmgr.msc System Configuration for advanced troubleshooting for troubleshooting configuration error.: msconfig More on System configuration here Task manager: Ctrl&#43;Shift&#43;Esc Control Panel: Control.exe Computer Management: compmgmt compmgmt.msc: System Tools Storage Services and Applications. WMI is a windows management instrumentation sevice Depricated in Win10 and taken over by Powershell System Information: msinfo32 msinfo32.exe Hardware Resources: Click Here to know more Components Software Environment Resource Monitor: resmon.exe Register: regedit regedt32.exe More about registery here Security Link to heading More on Microsoft Security Update Guide">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/system---windows/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/system---windows/">
+          System - Windows
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="window-note">
+  Window Note
+  <a class="heading-link" href="#window-note">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="file-system-overall">
+  File System Overall
+  <a class="heading-link" href="#file-system-overall">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><strong>FAT16/FAT32</strong> (File Allocation Table) - Mostly external use</li>
+<li><strong>HPFS</strong> (High Performance File System) - Not much in use</li>
+<li><strong>NTFS</strong> New Technology File System
+<ul>
+<li>Kown as journaling file system: <strong>repair folder/files using a log file</strong></li>
+<li>Benefits:
+<ul>
+<li>Supports files <strong>larger than 4GB</strong></li>
+<li>Set specific <strong>permissions</strong> on folders and files</li>
+<li>Folder and file <strong>compression</strong></li>
+<li><strong>Encryption</strong> (Encryption File System or EFS)</li>
+<li>Alternate Data Streams (<strong>ADS</strong>)
+<ul>
+<li>Every file contain one data stream ($DATA), ADS allows file to contains more than a data stream: can use ADS to hide data</li>
+<li><a href="https://www.malwarebytes.com/blog/news/2015/07/introduction-to-alternate-data-streams"  class="external-link" target="_blank" rel="noopener">More on ADS here</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/backup-and-storage/fat-hpfs-and-ntfs-file-systems"  class="external-link" target="_blank" rel="noopener">More on FAT, HPFS, and NTFS File Systems</a></li>
+<li><strong>System enviroment variable directory path</strong>: Stores information about operating system enviroment <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.3&amp;viewFallbackFrom=powershell-7.1"  class="external-link" target="_blank" rel="noopener">More on this here</a></li>
+</ul>
+<pre tabindex="0"><code>%Windir%
+</code></pre><ul>
+<li>Most important folder in the <strong>Windows</strong> directory is <strong>System32</strong> directory: contains all the Windows system operational files for the Windows OS to function properly</li>
+</ul>
+<h2 id="system-panel">
+  System Panel
+  <a class="heading-link" href="#system-panel">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Local User and Group Management: <strong>lusrmgr.msc</strong></li>
+<li>System Configuration for advanced troubleshooting for troubleshooting configuration error.: <strong>msconfig</strong>
+<a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/performance/system-configuration-utility-troubleshoot-configuration-errors"  class="external-link" target="_blank" rel="noopener">More on System configuration here</a></li>
+<li>Task manager: <strong>Ctrl+Shift+Esc</strong></li>
+<li>Control Panel: <strong>Control.exe</strong></li>
+<li>Computer Management: <strong>compmgmt</strong> <strong>compmgmt.msc</strong>:
+<ul>
+<li>System Tools</li>
+<li>Storage</li>
+<li>Services and Applications.
+<ul>
+<li>WMI is a windows management instrumentation sevice
+<ul>
+<li>Depricated in Win10 and taken over by Powershell</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>System Information: <strong>msinfo32</strong> <strong>msinfo32.exe</strong>
+<ul>
+<li>Hardware Resources: <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/hardware-resources#:~:text=Hardware%20resources%20are%20the%20assignable,of%20bus%2Drelative%20memory%20addresses."  class="external-link" target="_blank" rel="noopener">Click Here to know more</a></li>
+<li>Components</li>
+<li>Software Environment</li>
+</ul>
+</li>
+<li>Resource Monitor: <strong>resmon.exe</strong></li>
+<li>Register: <strong>regedit</strong> <strong>regedt32.exe</strong> <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/windows-registry-advanced-users"  class="external-link" target="_blank" rel="noopener">More about registery here</a></li>
+</ul>
+<h2 id="security">
+  Security
+  <a class="heading-link" href="#security">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><a href="https://msrc.microsoft.com/update-guide"  class="external-link" target="_blank" rel="noopener">More on Microsoft Security Update Guide</a></p>
+<ul>
+<li>Microsoft Defender SmartScreen: protects against phishing, malware website, application and download of malicious files <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview"  class="external-link" target="_blank" rel="noopener">More on this topic here</a></li>
+<li>Bitlocker encryption system <a href="https://learn.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview"  class="external-link" target="_blank" rel="noopener">More on this topic here</a></li>
+<li>Volume Shadow Copy Service (VSS): A snapshot of the selected data
+<ul>
+<li>Usually gets deleted first when a ransomware is deployed to prevent recovery</li>
+</ul>
+</li>
+<li>Antimalware Scan Interface (AMSI): Allows application and service to integrate with any antimalware product. Provide enhanced malware protection <a href="https://learn.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal"  class="external-link" target="_blank" rel="noopener">More on this topic</a></li>
+<li>Windows Hello: Provide a way to get instant access to Windows device using fingerprint/facial recognition/PIN</li>
+<li>Windows 10 21H1: Most stable realease
+<ul>
+<li>Windows Defender Application Guard (WDAG)
+<ul>
+<li>Improved to increase document opening time from the use of UNC path and SMB path</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Living Off The Land</strong>: use the build-in tools and utility to go undetected within the enviroment. <a href="https://lolbas-project.github.io/#"  class="external-link" target="_blank" rel="noopener">More on this resource here</a></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2025 -
+    
+    2026
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

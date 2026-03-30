@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  Scripts · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Scripts
+  
+    
+    Link to heading
+  
+
+
+  LinEnum - Privesc
+  
+    
+    Link to heading
+  
+
+
+LinEnum is a simple bash script that performs common commands related to privilege escalation
+LinEnum script download
+LinEnum output is broken down into following section:
+
+If there is SUID/GUID bit set: This means that the file or files can be run with the permissions of the file(s) owner/group
+
+SUID: rws-rwx-rwx (extra bit “4” is set to user/owner)
+GUID: rwx-rws-rwx (bit “2” is set to group)
+
+
+Can we read/write sensitive files: usually via /etc/passwd
+Crontab Contents: mainly for cron daemon auto execution
+
+
+Available host shell can be seen via /etc/shells
+Cronjob: /etc/cron
+
+
+  find SUID file
+  
+    
+    Link to heading
+  
+
+
+find / -perm -u=s -type f 2&gt;/dev/null
+">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scripts">
+  <meta name="twitter:description" content="Scripts Link to heading LinEnum - Privesc Link to heading LinEnum is a simple bash script that performs common commands related to privilege escalation LinEnum script download LinEnum output is broken down into following section: If there is SUID/GUID bit set: This means that the file or files can be run with the permissions of the file(s) owner/group SUID: rws-rwx-rwx (extra bit “4” is set to user/owner) GUID: rwx-rws-rwx (bit “2” is set to group) Can we read/write sensitive files: usually via /etc/passwd Crontab Contents: mainly for cron daemon auto execution Available host shell can be seen via /etc/shells Cronjob: /etc/cron find SUID file Link to heading find / -perm -u=s -type f 2&gt;/dev/null">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/scripts/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="Scripts">
+  <meta property="og:description" content="Scripts Link to heading LinEnum - Privesc Link to heading LinEnum is a simple bash script that performs common commands related to privilege escalation LinEnum script download LinEnum output is broken down into following section: If there is SUID/GUID bit set: This means that the file or files can be run with the permissions of the file(s) owner/group SUID: rws-rwx-rwx (extra bit “4” is set to user/owner) GUID: rwx-rws-rwx (bit “2” is set to group) Can we read/write sensitive files: usually via /etc/passwd Crontab Contents: mainly for cron daemon auto execution Available host shell can be seen via /etc/shells Cronjob: /etc/cron find SUID file Link to heading find / -perm -u=s -type f 2&gt;/dev/null">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/scripts/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/scripts/">
+          Scripts
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="scripts">
+  Scripts
+  <a class="heading-link" href="#scripts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="linenum---privesc">
+  LinEnum - Privesc
+  <a class="heading-link" href="#linenum---privesc">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>LinEnum is a simple bash script that performs common commands related to privilege escalation</li>
+<li><a href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh"  class="external-link" target="_blank" rel="noopener">LinEnum script download</a></li>
+<li>LinEnum output is broken down into following section:
+<ul>
+<li>If there is <code>SUID/GUID bit</code> set: This means that the file or files can be run with the permissions of the file(s) owner/group
+<ul>
+<li>SUID: rws-rwx-rwx (extra bit “4” is set to user/owner)</li>
+<li>GUID: rwx-rws-rwx (bit “2” is set to group)</li>
+</ul>
+</li>
+<li>Can we read/write sensitive files: usually via <code>/etc/passwd</code></li>
+<li>Crontab Contents: mainly for cron daemon auto execution</li>
+</ul>
+</li>
+<li>Available host shell can be seen via <code>/etc/shells</code></li>
+<li>Cronjob: <code>/etc/cron</code></li>
+</ul>
+<h3 id="find-suid-file">
+  find SUID file
+  <a class="heading-link" href="#find-suid-file">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><code>find / -perm -u=s -type f 2&gt;/dev/null</code></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2025 -
+    
+    2026
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

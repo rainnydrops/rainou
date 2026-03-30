@@ -1,6 +1,5 @@
 ---
 title: NMAP
-date: 2024-02-03
 updated: 2024-02-03 20:58:04Z
 created: 2024-01-27 20:52:08Z
 ---
@@ -14,7 +13,8 @@ Enumeration tool to scan the available port and services
 `nmap -h` or `man nmap` man page
 
 ## Scanning
-![Three-Way Handshake](threewayhandshake.png)
+
+![Three way hand shake](1.png)
 Close port should obey to [RFC 9293](https://datatracker.ietf.org/doc/html/rfc9293) when a closed port should send back a RST packet
 
 Switch starts with `s`  

