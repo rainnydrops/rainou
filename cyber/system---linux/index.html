@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  System - Linux · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Linux System Note
+  
+    
+    Link to heading
+  
+
+
+  System file format
+  
+    
+    Link to heading
+  
+
+
+  Password
+  
+    
+    Link to heading
+  
+
+
+/etc/passwd
+Username:Password:User ID:Group ID:User ID Info:Home directory:Command/shell
+test:x:0:0:root:/root:/bin/bash
+this command is required to store directly in passwd file, openssl passwd -1 -salt new 123 or store/update the hash to shadow file
+
+
+  Crontab
+  
+    
+    Link to heading
+  
+
+
+/etc/crontab
+[ID] [Minute] [Hour] [Day of the month] [Month] [Day of the week] [user:What user the command will run as] [command]
+# m h dom mon dow user command
+17 *   1  *   *   *  root  cd / &amp;&amp; run-parts --report /etc/cron.hourly
+
+
+  Server on Ubuntu
+  
+    
+    Link to heading
+  
+
+Ubuntu has a build in pyhton http server that can be run by using the following command:">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="System - Linux">
+  <meta name="twitter:description" content="Linux System Note Link to heading System file format Link to heading Password Link to heading /etc/passwd Username:Password:User ID:Group ID:User ID Info:Home directory:Command/shell test:x:0:0:root:/root:/bin/bash this command is required to store directly in passwd file, openssl passwd -1 -salt new 123 or store/update the hash to shadow file Crontab Link to heading /etc/crontab [ID] [Minute] [Hour] [Day of the month] [Month] [Day of the week] [user:What user the command will run as] [command] # m h dom mon dow user command 17 * 1 * * * root cd / &amp;&amp; run-parts --report /etc/cron.hourly Server on Ubuntu Link to heading Ubuntu has a build in pyhton http server that can be run by using the following command:">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/system---linux/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="System - Linux">
+  <meta property="og:description" content="Linux System Note Link to heading System file format Link to heading Password Link to heading /etc/passwd Username:Password:User ID:Group ID:User ID Info:Home directory:Command/shell test:x:0:0:root:/root:/bin/bash this command is required to store directly in passwd file, openssl passwd -1 -salt new 123 or store/update the hash to shadow file Crontab Link to heading /etc/crontab [ID] [Minute] [Hour] [Day of the month] [Month] [Day of the week] [user:What user the command will run as] [command] # m h dom mon dow user command 17 * 1 * * * root cd / &amp;&amp; run-parts --report /etc/cron.hourly Server on Ubuntu Link to heading Ubuntu has a build in pyhton http server that can be run by using the following command:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/system---linux/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/system---linux/">
+          System - Linux
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="linux-system-note">
+  Linux System Note
+  <a class="heading-link" href="#linux-system-note">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h1 id="system-file-format">
+  System file format
+  <a class="heading-link" href="#system-file-format">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h3 id="password">
+  Password
+  <a class="heading-link" href="#password">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>/etc/passwd</li>
+<li><code>Username:Password:User ID:Group ID:User ID Info:Home directory:Command/shell</code></li>
+<li><code>test:x:0:0:root:/root:/bin/bash</code></li>
+<li>this command is required to store directly in passwd file, <code>openssl passwd -1 -salt new 123</code> or store/update the hash to shadow file</li>
+</ul>
+<h3 id="crontab">
+  Crontab
+  <a class="heading-link" href="#crontab">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>/etc/crontab</li>
+<li>[ID] [Minute] [Hour] [Day of the month] [Month] [Day of the week] [user:What user the command will run as] [command]</li>
+<li><code># m h dom mon dow user command</code></li>
+<li><code>17 *   1  *   *   *  root  cd / &amp;&amp; run-parts --report /etc/cron.hourly</code></li>
+</ul>
+<h2 id="server-on-ubuntu">
+  Server on Ubuntu
+  <a class="heading-link" href="#server-on-ubuntu">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Ubuntu has a build in pyhton http server that can be run by using the following command:</p>
+<pre><code>python3 -m http.server
+</code></pre>
+<p>serving from a directory called server, it does not have ha way to index or listing the file</p>
+<hr>
+<h1 id="repository">
+  Repository
+  <a class="heading-link" href="#repository">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>developper sibmit software to apt repository, only gets to release to public when approved</li>
+<li>&ldquo;apt&rdquo; is operation system&rsquo;s repository
+<ul>
+<li>part of the package management software</li>
+<li>contain a whole suite of tool to manage packages and source of the software</li>
+</ul>
+</li>
+<li>can add community repository using following command:</li>
+</ul>
+<pre tabindex="0"><code>add-apt-repository /*or listing another provider*/
+</code></pre><h2 id="package-control">
+  Package Control
+  <a class="heading-link" href="#package-control">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The process of downloading sublime text 3 manually</p>
+<ol>
+<li>Add GPG key for the developers of Sublime Text 3
+<ul>
+<li>The integrity of the downloaded software is checked using GPG (Gnu Privacy Guard) keys.</li>
+</ul>
+</li>
+</ol>
+<pre tabindex="0"><code>wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+</code></pre><pre><code>download GPG key &amp; use apt-key to trust it
+</code></pre>
+<ol start="2">
+<li>Add Sublime Text 3&rsquo;s repository: always have seperate file for different 3rd-party tool added
+<ul>
+<li>Create /etc/apt/sources.list.d/sublime-text.list
+<ul>
+<li>/etc/apt/sources.list.d for repository list</li>
+<li>sublime-text.list for the repository</li>
+</ul>
+</li>
+<li>The content of sublime-text.list is the link to the repository
+<ul>
+<li>&ldquo;deb <a href="https://download.sublimetext.com"  class="external-link" target="_blank" rel="noopener">https://download.sublimetext.com</a> apt/stable/&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use the apt command to update the repository</li>
+</ol>
+<pre tabindex="0"><code>	apt update
+</code></pre><ol start="4">
+<li>Install the package</li>
+</ol>
+<pre tabindex="0"><code>	apt install sublime-text
+</code></pre><p><strong>Command to remove the repository</strong></p>
+<pre tabindex="0"><code>add-apt-repository --remove ppa:PPA_Name/ppa
+</code></pre><p>or manually delete the file</p>
+<p><strong>Command to remove software</strong></p>
+<pre tabindex="0"><code>apt remove [software-name-here]
+</code></pre><hr>
+<h1 id="logs">
+  Logs
+  <a class="heading-link" href="#logs">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>located in /var/log directory</li>
+<li>Two main area of interest:
+<ul>
+<li>access log</li>
+<li>error log</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="command">
+  Command
+  <a class="heading-link" href="#command">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p><code>locate</code>:  locate the location of a command or file
+<code>ldd</code>: check shared libraries are used by the program
+<code>string</code>: print the printable character in files</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2025 -
+    
+    2026
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

